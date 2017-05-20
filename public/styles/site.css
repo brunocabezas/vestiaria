@@ -6715,8 +6715,28 @@ button.close {
     display: none !important;
   }
 }
-#header {
+.header {
+  padding: 0 20px;
   margin-top: 30px;
+}
+.header .header__menu {
+  text-align: right;
+  list-style-type: none;
+}
+.header .header__menu li {
+  margin: 0 5px;
+  display: inline-block;
+}
+.header .header__menu li:last-child {
+  margin-right: 0;
+}
+.header .header__menu li a {
+  transition: color 0.3;
+  text-transform: uppercase;
+  color: #000;
+}
+.header .header__menu li a:hover {
+  color: #ff0;
 }
 #footer {
   margin-top: 30px;

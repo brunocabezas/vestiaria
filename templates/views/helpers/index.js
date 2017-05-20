@@ -28,6 +28,16 @@ module.exports = function () {
 		}
 	};
 
+	// standard hbs equality check, pass in two values from template
+	// {{#ifeq keyToCheck data.myKey}} [requires an else blockin template regardless]
+	_helpers.ifNoteq = function (a, b, options) {
+		if (a !== b) { // eslint-disable-line eqeqeq
+			return options.fn(this);
+		} else {
+			return options.inverse(this);
+		}
+	};
+
 	/**
 	 * Port of Ghost helpers to support cross-theming
 	 * ==============================================

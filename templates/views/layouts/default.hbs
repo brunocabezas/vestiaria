@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>vestiaria</title>
+		<title>claudia robles</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<link href="/styles/site.css" rel="stylesheet">
 
@@ -21,13 +21,19 @@
 
 	</head>
 	<body>
-		<div id="header">
+		<div class="header">
 			<ul class="header__menu">
-					{{# each navLinks}}
-					<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
-						<a href="{{ href }}">{{ label }}</a>
-					</li>
+				{{# each navLinks}}
+					{{#ifNoteq label "Home"}}
+						<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+							<a href="{{ href }}">{{ label }}</a>
+						</li>
+					{{/ifNoteq}}
 				{{/each}}
+				<li>-</li>
+				<li>
+					<a target="_blank" href="https://www.instagram.com/cluda.roblins">instagram</a>
+				</li>
 			</ul>
 			<!-- <div class="container">
 				<div role="navigation" class="navbar navbar-default">

@@ -22,7 +22,14 @@
 	</head>
 	<body>
 		<div id="header">
-			<div class="container">
+			<ul class="header__menu">
+					{{# each navLinks}}
+					<li {{#ifeq ../section key}}class="active"{{else}}{{/ifeq}}>
+						<a href="{{ href }}">{{ label }}</a>
+					</li>
+				{{/each}}
+			</ul>
+			<!-- <div class="container">
 				<div role="navigation" class="navbar navbar-default">
 					<div class="container-fluid">
 						<div class="navbar-header">
@@ -40,17 +47,17 @@
 									</li>
 								{{/each}}
 							</ul>
-							<!-- <ul class="nav navbar-nav navbar-right">
+							<ul class="nav navbar-nav navbar-right">
 								{{#if user}}
 								<li><a href="/keystone/signout">Sign Out</a></li>
 								{{else}}
 								<li><a href="/keystone/signin">Sign In</a></li>
 								{{/if}}
-							</ul> -->
+							</ul>
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 		<div id="body">
 			<!--

@@ -32,3 +32,6 @@ node_modules
 
 # Data folder with mongo db
 data/
+
+# public folder
+public/

@@ -2,31 +2,36 @@
 
 $header__height = 50px;
 
-header
-  position absolute
-  width calc(100% - 2*10px)
-  height  $header__height
-  padding 10px
-  text-align right
-  .header__menu
-    display inline-block
-    li.container123
-        @include column(1/3);
-    list-style-type none
-    li
-      margin 0 5px
-      &:last-child
-        margin-right:0
-      display inline-block
-      a
-        transition color 0.3
-        text-transform uppercase
-        color black
-        &:hover
-          color yellow
+body
+  margin 0
 
-#body
-  padding-top : $header__height;
+  header
+    box-sizing border-box
+    position absolute
+    width 100%
+    height  $header__height
+    padding 10px
+    text-align right
+    .header__menu
+      margin 0
+      right 10px
+      li.container123
+          @include column(1/3);
+      list-style-type none
+      li
+        margin 0 5px
+        &:last-child
+          margin-right:0
+        display inline-block
+        a
+          transition color 0.3
+          text-transform uppercase
+          color black
+          &:hover
+            color yellow
+
+  .app__container
+    padding-top $header__height
 
 #footer
   margin-top 30px

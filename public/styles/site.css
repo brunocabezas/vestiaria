@@ -1,32 +1,36 @@
-@import '../../public/normalize.css/normalize.css';
-header {
+body {
+  margin: 0;
+}
+body header {
+  box-sizing: border-box;
   position: absolute;
-  width: calc(100% - 2 * 10px);
+  width: 100%;
   height: 50px;
   padding: 10px;
   text-align: right;
 }
-header .header__menu {
-  display: inline-block;
+body header .header__menu {
+  margin: 0;
+  right: 10px;
   list-style-type: none;
 }
 @include column(1/3);
-header .header__menu li {
+body header .header__menu li {
   margin: 0 5px;
   display: inline-block;
 }
-header .header__menu li:last-child {
+body header .header__menu li:last-child {
   margin-right: 0;
 }
-header .header__menu li a {
+body header .header__menu li a {
   transition: color 0.3;
   text-transform: uppercase;
   color: #000;
 }
-header .header__menu li a:hover {
+body header .header__menu li a:hover {
   color: #ff0;
 }
-#body {
+body .app__container {
   padding-top: 50px;
 }
 #footer {
@@ -47,6 +51,25 @@ header .header__menu li a:hover {
 }
 * {
   font-family: Roboto;
+}
+.child {
+  display: inherit !important;
+}
+.child.both {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.child.horizontal {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.child.vertical {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 .container {
   color: #f00;

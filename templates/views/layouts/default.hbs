@@ -24,8 +24,8 @@
 
 	</head>
 	<body>
-		<header class="header">
-			<ul class="header__menu">
+		<header class="header parent">
+			<ul class="header__menu child vertical">
 				{{# each navLinks}}
 					{{#ifNoteq label "Home"}}
 						<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
@@ -40,7 +40,7 @@
 			</ul>
 		</header>
 
-		<div id="body">
+		<div class="app__container">
 			<!--
 				Flash messages allow you to display once-off status messages to users, e.g. form
 				validation errors, success messages, etc

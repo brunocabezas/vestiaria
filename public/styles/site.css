@@ -34,6 +34,14 @@
   max-width: 100%;
   height: auto;
 }
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  src: url("../../fonts/Roboto-Regular.ttf");
+}
+* {
+  font-family: Roboto;
+}
 .container {
   color: #f00;
   text-align: right;

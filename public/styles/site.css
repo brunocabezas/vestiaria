@@ -1,5 +1,10 @@
+html {
+  height: 100%;
+}
 body {
   margin: 0;
+  min-height: 100%;
+  height: 100%;
 }
 body header {
   box-sizing: border-box;
@@ -24,7 +29,8 @@ body header .header__menu li:last-child {
 }
 body header .header__menu li a {
   transition: color 0.3;
-  text-transform: uppercase;
+  text-decoration: none;
+  text-transform: lowercase;
   color: #000;
 }
 body header .header__menu li a:hover {
@@ -32,6 +38,7 @@ body header .header__menu li a:hover {
 }
 body .app__container {
   padding-top: 50px;
+  height: 100%;
 }
 #footer {
   margin-top: 30px;

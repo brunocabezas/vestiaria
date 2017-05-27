@@ -3,7 +3,7 @@
 
 // Bootstrap can be removed entirely by deleting this line.
 
-@import "bootstrap"
+// @import "bootstrap"
 
 // The easiest way to customise Bootstrap variables while
 // being able to easily override the source files with new
@@ -11,12 +11,15 @@
 //
 // You can also add your own custom variables to this file for
 // use in your site stylesheets.
-
+@import 'jeet/index';
 @import "site/_variables"
-
-
 // Site Styles
 // ===========
-
+.container{
+  clearfix();
+  color:white;
+}
 // Add your own site style includes here
 @import "site/_layout"
+
+@import "_work"

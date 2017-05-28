@@ -19,11 +19,15 @@ body
       margin 0
       right 10px
       list-style-type none
+      text-align right
+      clearfix();
       li
-        margin 0 5px
-        &:last-child
-          margin-right:0
-        display inline-block
+        span(1/4)
+        float none
+        display table-cell
+        padding  0 5px
+        text-align center
+        vertical-align middle
         a
           transition color 0.3
           text-decoration none
@@ -31,6 +35,12 @@ body
           color black
           &:hover
             color yellow
+        &.social-feed
+          img,a
+            height 26px
+            width 26px
+          img
+            vertical-align bottom
 
   .app__container
     padding-top $header__height

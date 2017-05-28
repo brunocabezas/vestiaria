@@ -19,13 +19,30 @@ body header .header__menu {
   margin: 0;
   right: 10px;
   list-style-type: none;
+  text-align: right;
+}
+body header .header__menu::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 body header .header__menu li {
-  margin: 0 5px;
-  display: inline-block;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 25%;
+  margin-left: 0%;
+  margin-right: 0%;
+  float: none;
+  display: table-cell;
+  padding: 0 5px;
+  text-align: center;
+  vertical-align: middle;
 }
-body header .header__menu li:last-child {
-  margin-right: 0;
+body header .header__menu li::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 body header .header__menu li a {
   transition: color 0.3;
@@ -35,6 +52,14 @@ body header .header__menu li a {
 }
 body header .header__menu li a:hover {
   color: #ff0;
+}
+body header .header__menu li.social-feed img,
+body header .header__menu li.social-feed a {
+  height: 26px;
+  width: 26px;
+}
+body header .header__menu li.social-feed img {
+  vertical-align: bottom;
 }
 body .app__container {
   padding-top: 50px;

@@ -6,7 +6,7 @@
       {{#ifNoteq label "Home"}}
         {{#ifNoteq label "Work"}}
           <li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
-            <a href="{{ href }}">{{ label }}</a>
+            <a title="{{label}}" href="{{ href }}">{{ label }}</a>
           </li>
         {{/ifNoteq}}
       {{/ifNoteq}}
@@ -14,8 +14,10 @@
     <li>
       <a data-featherlight="#mylightbox" href="#">work</a>
     </li>
-    <li>
-      <a target="_blank" href="https://www.instagram.com/cluda.roblins">instagram</a>
+    <li class="social-feed">
+      <a title="instagram" datarget="_blank" href="https://www.instagram.com/cluda.roblins">
+        <img src="/images/instagram-icon.png" alt="">
+      </a>
     </li>
   </ul>
 </header>

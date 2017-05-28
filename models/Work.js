@@ -9,7 +9,6 @@ var Types = keystone.Field.Types;
 var Work = new keystone.List('Work', {
 	autokey: { from: 'name', path: 'slug', unique: true },
 });
-
 Work.add({
 	name: { type: String, required: true },
 	heroImage: { type: Types.CloudinaryImage },
@@ -20,4 +19,5 @@ Work.add({
 	video : { type: String }
 });
 
+Work.defaultColumns = 'name|20%, heriImage|15%, createdBy, createdAt';
 Work.register();

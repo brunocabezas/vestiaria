@@ -5,6 +5,7 @@ exports = module.exports = function (req, res) {
 	var view = new keystone.View(req, res);
 	var Works = keystone.list('Work');
 	var locals = res.locals;
+	view.query('works', keystone.list('Work').model.find().sort('publishedDate'));
 	// Load work with workId url param
 	const workSlug = req.params.slug;
 

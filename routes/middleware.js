@@ -17,6 +17,8 @@ var _ = require('lodash');
 	the navigation in the header, you may wish to change this array
 	or replace it with your own templates / logic.
 */
+var keystone = require('keystone');
+
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
 			{ label: 'instagram', href: '/' }
@@ -28,7 +30,10 @@ exports.initLocals = function (req, res, next) {
 		{ label: 'Contact', key: 'contact', href: '/contact' },
 	];
 	res.locals.user = req.user;
-	next();
+	keystone.list('Work').model.find().sort('publishedDate').exec(function (err, result) {
+ 	 res.locals.works = result;
+ 	 next(err);
+  });
 };
 
 

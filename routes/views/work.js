@@ -6,12 +6,12 @@ exports = module.exports = function (req, res) {
 	var Works = keystone.list('Work');
 	var locals = res.locals;
 	// Load work with workId url param
-	const workId = req.params.id;
+	const workSlug = req.params.slug;
 
 	// Load the current post
 	view.on('init', function (next) {
 		var q = 	Works.model.findOne({
-			slug : workId
+			slug : workSlug
 		});
 		q.exec(function (err, result) {
 			locals.work = result;

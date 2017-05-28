@@ -37,61 +37,8 @@
 
 	</head>
 	<body>
-		<header class="header parent">
-			<ul class="header__menu child vertical">
-				{{# each navLinks}}
-				{{!--  not showing home button and work menu, because work menu handles a grid image overlay lightbox --}}
-					{{#ifNoteq label "Home"}}
-						{{#ifNoteq label "Work"}}
-							<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
-								<a href="{{ href }}">{{ label }}</a>
-							</li>
-						{{/ifNoteq}}
-					{{/ifNoteq}}
-				{{/each}}
-				<li>
-					<a data-featherlight="#mylightbox" href="#">work</a>
-				</li>
-				<li>
-					<a target="_blank" href="https://www.instagram.com/cluda.roblins">instagram</a>
-				</li>
-			</ul>
-		</header>
-
-		<div class="app__container">
-			<!--
-				Flash messages allow you to display once-off status messages to users, e.g. form
-				validation errors, success messages, etc
-			-->
-			{{#if messages}}
-			<div id="flash-messages" class="container">
-				{{#if messages.info}}
-				<div class="alert alert-info">
-						{{{flashMessages messages.info}}}
-				</div>
-				{{/if}}
-				{{#if messages.success}}
-				<div class="alert alert-success">
-						{{{flashMessages messages.success}}}
-				</div>
-				{{/if}}
-				{{#if messages.warning}}
-				<div class="alert alert-warning">
-						{{{flashMessages messages.warning}}}
-				</div>
-				{{/if}}
-				{{#if messages.error}}
-				<div class="alert alert-danger">
-						{{{flashMessages messages.error}}}
-				</div>
-				{{/if}}
-			</div>
-			{{/if}}
-			<!-- The content block should contain the body of your template's content-->
-			{{{body}}}
-		</div>
-
-		</div>
+		{{> header links=navLinks }}
+		{{> app }}
 		{{{isAdminEditorJS user}}}
 	</body>
 </html>

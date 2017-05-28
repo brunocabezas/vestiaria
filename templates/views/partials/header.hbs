@@ -1,0 +1,21 @@
+
+<header class="header parent">
+  <ul class="header__menu child vertical">
+    {{# each links}}
+    {{!--  not showing home button and work menu, because work menu handles a grid image overlay lightbox --}}
+      {{#ifNoteq label "Home"}}
+        {{#ifNoteq label "Work"}}
+          <li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+            <a href="{{ href }}">{{ label }}</a>
+          </li>
+        {{/ifNoteq}}
+      {{/ifNoteq}}
+    {{/each}}
+    <li>
+      <a data-featherlight="#mylightbox" href="#">work</a>
+    </li>
+    <li>
+      <a target="_blank" href="https://www.instagram.com/cluda.roblins">instagram</a>
+    </li>
+  </ul>
+</header>

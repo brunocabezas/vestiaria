@@ -7,9 +7,22 @@
 		<title>claudia robles</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
+
+		{{!--
+			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
+			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
+			//- you can upgrade to 2.1.4 (also bundled) for better performance.
+		--}}
+		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
+		{{!--
+			//- Customise which Bootstrap javascript files are served by including
+			//- them specifically here, instead of bootstrap-3.3.5.min.js
+		--}}
+		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
+		<script src="/js/featherlight/featherlight.min.js" />
 		</script>
 		<link href="/styles/site.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css" rel="stylesheet">	
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css" rel="stylesheet">
 
 		{{!-- This file provides the default styling for the KeystoneJS Content Editor
 			- only renders when user is logged in and admin--}}
@@ -27,13 +40,18 @@
 		<header class="header parent">
 			<ul class="header__menu child vertical">
 				{{# each navLinks}}
+				{{!--  not showing home button and work menu, because work menu handles a grid image overlay lightbox --}}
 					{{#ifNoteq label "Home"}}
-						<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
-							<a href="{{ href }}">{{ label }}</a>
-						</li>
+						{{#ifNoteq label "Work"}}
+							<li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+								<a href="{{ href }}">{{ label }}</a>
+							</li>
+						{{/ifNoteq}}
 					{{/ifNoteq}}
 				{{/each}}
-				<li class="container123">-</li>
+				<li>
+					<a data-featherlight="#mylightbox" href="#">work</a>
+				</li>
 				<li>
 					<a target="_blank" href="https://www.instagram.com/cluda.roblins">instagram</a>
 				</li>
@@ -74,17 +92,6 @@
 		</div>
 
 		</div>
-		{{!--
-			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
-			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
-			//- you can upgrade to 2.1.4 (also bundled) for better performance.
-		--}}
-		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
-		{{!--
-			//- Customise which Bootstrap javascript files are served by including
-			//- them specifically here, instead of bootstrap-3.3.5.min.js
-		--}}
-		<script src="/js/bootstrap/bootstrap-3.3.5.min.js"></script>
 		{{{isAdminEditorJS user}}}
 	</body>
 </html>

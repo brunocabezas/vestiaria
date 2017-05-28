@@ -1,3 +1,4 @@
+@import '../js/featherlight/featherlight.min.css';
 html {
   height: 100%;
 }
@@ -37,7 +38,7 @@ body header .header__menu li a:hover {
 }
 body .app__container {
   padding-top: 50px;
-  height: 100%;
+  height: calc(100% - 50px);
 }
 #footer {
   margin-top: 30px;
@@ -81,20 +82,43 @@ body .app__container {
   color: #f00;
   text-align: right;
 }
-@include center();
-@include column(1/3);
 .home .wrapper {
-  width: auto;
-  max-width: 420px;
-  float: none;
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  padding-left: 0;
-  padding-right: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.home .wrapper::after {
+.work-gallery {
+  display: none;
+}
+.work-gallery::after {
   content: '';
   display: table;
   clear: both;
+}
+.work-gallery .work {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 25%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+.work-gallery .work::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.work-gallery .work .image {
+  display: block;
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.featherlight-content {
+  width: 100%;
+  margin-left: 0 !important;
+  min-height: 100%;
 }

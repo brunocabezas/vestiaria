@@ -1,0 +1,16 @@
+<div id="imageButton" style="background-image:url({{cloudinaryUrl photos.[0]}})" />
+
+<script type="text/javascript">
+  var images = JSON.parse('{{{json photos}}}'),
+      i = 1;
+  for (var j=images.length; j--;) {
+      var img = new Image();
+      img.src = images[j].url;
+  }
+  document.getElementById('imageButton').addEventListener('click', function() {
+    var imageurl = images[i >= images.length - 1 ? i = 0 : ++i].url;
+    console.log(this)
+    this.style="background-image:url("+imageurl+")";
+
+  }, false);
+</script>

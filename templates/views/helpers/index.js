@@ -336,5 +336,9 @@ module.exports = function () {
 		return obj._[underscoreMethod].format();
 	};
 
+	_helpers.json = function(context) {
+	    return JSON.stringify(context);
+	 };
+	 
 	return _helpers;
 };

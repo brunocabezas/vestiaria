@@ -16,7 +16,6 @@ exports = module.exports = function (req, res) {
 		});
 		q.exec(function (err, result) {
 			locals.work = result;
-			console.log(result.gallery)
 			next(err);
 		});
 	});

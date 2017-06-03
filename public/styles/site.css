@@ -109,7 +109,17 @@ body .app__container {
   clear: both;
 }
 .work .content {
+  height: 590px;
+  background-color: #808080;
+  width: 590px;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.work .content iframe {
+  position: absolute;
+  transform-style: preserve-3d;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

@@ -12,12 +12,11 @@ var Work = new keystone.List('Work', {
 Work.add({
 	name: { type: String, required: true },
 	heroImage: { type: Types.CloudinaryImage },
-	publishedDate: { type: Date, default: Date.now },
 	date  : { type: Date, default: Date.now },
-	abstract : { type: String },
+	abstract : { type: Types.Textarea },
 	gallery: { type: Types.CloudinaryImages },
 	video : { type: String }
 });
 
-Work.defaultColumns = 'name|20%, heriImage|15%, createdBy, createdAt';
+Work.defaultColumns = 'name|20%, heriImage|15%, createdBy, createdAt'
 Work.register();

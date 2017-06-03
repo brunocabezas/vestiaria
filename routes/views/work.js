@@ -11,7 +11,7 @@ exports = module.exports = function (req, res) {
 
 	// Load the current post
 	view.on('init', function (next) {
-		var q = 	Works.model.findOne({
+		var q = Works.model.findOne({
 			slug : workSlug
 		});
 		q.exec(function (err, result) {
@@ -19,7 +19,6 @@ exports = module.exports = function (req, res) {
 			next(err);
 		});
 	});
-
 	// Render the view
 	view.render('work');
 };

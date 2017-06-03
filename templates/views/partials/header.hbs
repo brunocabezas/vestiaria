@@ -1,22 +1,21 @@
 
 <header class="header parent">
   <ul class="header__menu child vertical">
-    <li><a data-featherlight="#mylightbox" href="#">work</a></li>
     {{# each links}}
-    {{!--  not showing home button and work menu, because work menu handles a grid image overlay lightbox --}}
-      {{#ifNoteq label "Home"}}
+      <li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
+        {{#ifeq label "Work"}}
+          <a data-featherlight="#mylightbox" href="#">work</a>
+        {{/ifeq}}
         {{#ifNoteq label "Work"}}
-          <li {{#ifeq ../section key}} class="active"{{else}}{{/ifeq}}>
-            <a title="{{label}}" href="{{ href }}">{{ label }}</a>
-          </li>
+          <a title="{{label}}" href="{{ href }}">{{ label }}</a>
         {{/ifNoteq}}
-      {{/ifNoteq}}
+      </li>
     {{/each}}
-    <li class="social-feed">
+    {{!-- <li class="social-feed">
       <a title="instagram" target="_blank" href="https://www.instagram.com/cluda.roblins">
         <img src="/images/instagram-icon.png" alt="">
       </a>
-    </li>
+    </li> --}}
   </ul>
   {{> works works=works}}
 </header>

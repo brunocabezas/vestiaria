@@ -15,7 +15,7 @@ Work.add({
 	date  : { type: Date, default: Date.now },
 	abstract : { type: Types.Textarea },
 	gallery: { type: Types.CloudinaryImages },
-	video : { type: String }
+	video : { type: String , default:""}
 });
 
 Work.defaultColumns = 'name|20%, heriImage|15%, createdBy, createdAt'

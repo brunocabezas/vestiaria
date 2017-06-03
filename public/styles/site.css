@@ -103,9 +103,29 @@ body .app__container {
   top: 50%;
   transform: translate(0, -50%);
 }
-.container {
-  color: #f00;
-  text-align: right;
+.work::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.work .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.work .sidebar {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 16.666666666666664%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+.work .sidebar::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 .home .wrapper {
   position: absolute;

@@ -19,14 +19,16 @@ exports = module.exports = function (req, res) {
 			var videoUrl = null;
 
 			if (result.video.indexOf('vimeo')>=0){
-				const splitted = result.video.split('/'),
+				var splitted = result.video.split('/'),
 					id = splitted[splitted.length-1];
 				videoUrl = "https://player.vimeo.com/video/"+id;
 
-			} else if (result.video.indexOf('youtube')){
-				console.log('is youtube')
+			} else if (result.video.indexOf('youtube')>=0){
+				var splitted = result.video.split('/watch?v='),
+					id = splitted[splitted.length-1];
+				videoUrl = "https://www.youtube.com/embed/"+id;
 			};
-			
+
 			locals.work = result;
 			locals.videoUrl = videoUrl;
 			next(err);

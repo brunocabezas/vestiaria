@@ -51,7 +51,7 @@ body header .header__menu li a {
   color: #000;
 }
 body header .header__menu li a:hover {
-  color: #ff0;
+  color: #ff9bf7;
 }
 body header .header__menu li.social-feed img,
 body header .header__menu li.social-feed a {
@@ -109,9 +109,9 @@ body .app__container {
   clear: both;
 }
 .work .content {
-  height: 590px;
-  background-color: #808080;
-  width: 590px;
+  height: 560px;
+  background-color: #000;
+  width: 560px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -140,7 +140,10 @@ body .app__container {
 #imageButton {
   width: 100%;
   height: 100%;
-  background-size: cover;
+  background-size: contain;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .home .wrapper {
   position: absolute;

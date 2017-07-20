@@ -11,9 +11,8 @@ exports = module.exports = function (req, res) {
 
 	// Load the current post
 	view.on('init', function (next) {
-		var q = Works.model.findOne({
-			slug : workSlug
-		});
+		var q = Works.model.findOne({slug : workSlug});
+		
 		q.exec(function (err, result) {
 			//  videoUrl its a valid parsed url to display vimeo and youtube videos
 			var videoUrl = null;

@@ -151,6 +151,17 @@ body .app__container {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.about .info {
+  padding: 1em;
+  text-align: center;
+}
+.about .info h4,
+.about .info p.upper {
+  text-transform: uppercase;
+}
+.about .info p.mail {
+  text-decoration: underline;
+}
 .work-gallery {
   display: none;
 }

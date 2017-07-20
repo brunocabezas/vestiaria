@@ -15,7 +15,20 @@ exports = module.exports = function (req, res) {
 			slug : workSlug
 		});
 		q.exec(function (err, result) {
+			//  videoUrl its a valid parsed url to display vimeo and youtube videos
+			var videoUrl = null;
+
+			if (result.video.indexOf('vimeo')>=0){
+				const splitted = result.video.split('/'),
+					id = splitted[splitted.length-1];
+				videoUrl = "https://player.vimeo.com/video/"+id;
+
+			} else if (result.video.indexOf('youtube')){
+				console.log('is youtube')
+			};
+			
 			locals.work = result;
+			locals.videoUrl = videoUrl;
 			next(err);
 		});
 	});

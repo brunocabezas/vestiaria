@@ -339,6 +339,12 @@ module.exports = function () {
 	_helpers.json = function(context) {
 	    return JSON.stringify(context);
 	 };
-	 
+
+	// ### custom helpers!
+
+	_helpers.videoUrl = function(url){
+		console.log(url);
+		return url;
+	}
 	return _helpers;
 };

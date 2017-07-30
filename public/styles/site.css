@@ -109,13 +109,23 @@ body .app__container {
   clear: both;
 }
 .work .content {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 33.33333333333333%;
+  margin-left: 0%;
+  margin-right: 0%;
+  position: relative;
+  vertical-align: top;
   height: 560px;
-  background-color: #000;
   width: 560px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  background-color: #eaeaea;
+  max-width: 560px;
+}
+.work .content::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 .work .content iframe {
   position: absolute;
@@ -125,10 +135,11 @@ body .app__container {
   transform: translate(-50%, -50%);
 }
 .work .sidebar {
+  padding: 0 1em 1em 1em;
   float: left;
   clear: none;
   text-align: inherit;
-  width: 16.666666666666664%;
+  width: 25%;
   margin-left: 0%;
   margin-right: 0%;
 }
@@ -136,6 +147,13 @@ body .app__container {
   content: '';
   display: table;
   clear: both;
+}
+.work .sidebar h1 {
+  font-size: 16px;
+  margin-top: 0;
+  padding: 7px;
+  background-color: #000;
+  color: #fff;
 }
 #imageButton {
   width: 100%;

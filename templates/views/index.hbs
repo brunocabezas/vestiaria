@@ -1,6 +1,8 @@
 {{!< default}}
 <div class="home">
   <div class="wrapper">
-    <img src="http://lorempixel.com/590/590/" alt="">
+    {{#if gallery}}
+      {{> home_gallery photos=gallery.images }}
+    {{/if}}
   </div>
 </div>

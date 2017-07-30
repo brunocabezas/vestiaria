@@ -38,6 +38,7 @@ keystone.init({
 
 // Load your project's Models
 keystone.import('models');
+// keystone.set('cloudinary config', '943359926363657:bQbTT6zW_GGdLTCvovbWA4Hy-QU@vestiaria-cloud' );
 
 // Setup common locals for your templates. The following are required for the
 // bundled templates and layouts. Any runtime locals (that should be set uniquely

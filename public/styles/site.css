@@ -103,6 +103,71 @@ body .app__container {
   top: 50%;
   transform: translate(0, -50%);
 }
+.work-gallery {
+  display: none;
+}
+.work-gallery::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.work-gallery .work {
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 25%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+.work-gallery .work::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.work-gallery .work .image {
+  display: block;
+  width: 100%;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.featherlight-content {
+  width: 100%;
+  margin-left: 0 !important;
+  min-height: 100%;
+}
+#imageButton {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.home {
+  text-align: center;
+}
+.home .wrapper {
+  margin: 0 auto;
+  position: relative;
+  vertical-align: top;
+  height: 560px;
+  width: 560px;
+  background-color: #eaeaea;
+  max-width: 560px;
+}
+.about .info {
+  padding: 0 1em 1em 1em;
+}
+.about .info h4,
+.about .info p.upper {
+  margin-top: 0;
+  text-transform: uppercase;
+}
+.about .info p.mail {
+  text-decoration: underline;
+}
 .work::after {
   content: '';
   display: table;
@@ -155,62 +220,19 @@ body .app__container {
   background-color: #000;
   color: #fff;
 }
-#imageButton {
-  width: 100%;
-  height: 100%;
-  background-size: contain;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: center;
+.contact {
+  padding: 0 1em 1em 1em;
 }
-.home .wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.contact > div {
+  margin: 0 0 10px 0;
 }
-.about .info {
-  padding: 1em;
-  text-align: center;
-}
-.about .info h4,
-.about .info p.upper {
+.contact a {
   text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
 }
-.about .info p.mail {
-  text-decoration: underline;
-}
-.work-gallery {
-  display: none;
-}
-.work-gallery::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-.work-gallery .work {
-  float: left;
-  clear: none;
-  text-align: inherit;
-  width: 25%;
-  margin-left: 0%;
-  margin-right: 0%;
-}
-.work-gallery .work::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-.work-gallery .work .image {
+.contact .dash {
+  font-style: 20px;
   display: block;
-  width: 100%;
-  height: 200px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.featherlight-content {
-  width: 100%;
-  margin-left: 0 !important;
-  min-height: 100%;
+  margin: 1.5em 0;
 }

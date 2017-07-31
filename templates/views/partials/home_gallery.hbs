@@ -2,14 +2,37 @@
 
 <script type="text/javascript">
   var images = JSON.parse('{{{json photos}}}'),
-      i = 1;
+      i = 0;
   for (var j=images.length; j--;) {
       var img = new Image();
       img.src = images[j].url;
   }
-  document.getElementById('imageButton').addEventListener('click', function() {
-    var imageurl = images[i >= images.length - 1 ? i = 0 : ++i].url;
-    this.style="background-image:url("+imageurl+")";
 
+  console.log(i,images.length)
+
+  document.addEventListener('keydown', function(e) {
+    var imageUrl = null;
+
+    //  arrow-back or arrow-next
+    if (e.keyCode===37) {
+      if (i===0){
+        i=images.length-1;
+        imageurl = images[i].url;
+      } else {
+        imageurl = images[--i].url;
+      }
+
+      document.getElementById('imageButton').style = "background-image:url("+imageurl+")";
+
+    } else if (e.keyCode===39){
+      imageurl = images[i >= images.length - 1 ? i = 0 : ++i].url;
+      document.getElementById('imageButton').style = "background-image:url("+imageurl+")"
+
+    }
+  }, false);
+
+  document.getElementById('imageButton').addEventListener('click', function() {console.log(i)
+    var imageurl = images[i >= images.length - 1 ? i = 0 : ++i].url;
+    this.style="background-image:url("+imageurl+")";console.log(i)
   }, false);
 </script>

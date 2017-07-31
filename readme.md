@@ -30,4 +30,8 @@ eslint -› runs the linter
 
 ## Support
 
-Application built with [KeystoneJS](https://github.com/keystonejs/keystone) - Node.js content management system.
+Application built with:
+  * [KeystoneJS](https://github.com/keystonejs/keystone) - Node.js content management system.
+  * [Jeet](http://jeet.gs/) - A grid system for humans.
+  * [Stylus](http://stylus-lang.com/) - CSS Framework.
+  * [featherLight](https://noelboss.github.io/featherlight/) - Very lightweight jQuery lightbox.

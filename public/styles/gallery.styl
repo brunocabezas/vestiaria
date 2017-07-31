@@ -3,5 +3,23 @@
   height 100%
   background-size contain
   cursor pointer
+  transition background-image .3s
   background-repeat no-repeat
   background-position center
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background: white;
+    padding 0
+    display block
+}
+
+.progress-bar-fill {
+    display: block;
+    height: 5px;
+    width: 0px;
+    background: #eaeaea;
+    /*transition: width 250ms ease-in-out;*/
+    transition: width 5s ease-in-out;
+}

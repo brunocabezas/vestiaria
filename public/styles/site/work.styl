@@ -12,11 +12,61 @@
     iframe
       align()
   .sidebar
-    padding 0 1em 1em 1em
+    box-sizing border-box
+    position relative
+    height 560px
+    padding 0 2em 1em 1em
     span(3/12)
     h1
       font-size 16px
       margin-top 0
       padding 7px
+      font-family Roboto
       background-color black
       color white
+      margin-bottom 50px
+    p
+      text-align justify
+      font-family Roboto-Thin
+    .work-tabs
+      position absolute
+      bottom 0
+      left 0
+      list-style-type none
+      padding-left 0
+      width 100%
+      li
+        text-transform lowercase
+        width 50%
+        display inline-block
+        text-align center
+        font-style 20px
+        font-family Roboto
+        transition all 0.3s
+        cursor pointer
+        &.active
+          color #ff9bf7
+        &:hover
+          color #ff9bf7
+    .work-text
+      position absolute
+      bottom 0
+      left 1em
+      list-style-type none
+      padding-left 0
+      width 100%
+      li
+        font-family Roboto
+      li:not(separator)
+        font-family Roboto-Thin
+        text-transform lowercase
+        margin 0 5px;
+        display inline-block
+        text-align center
+        font-style 20px
+        transition all 0.3s
+        cursor pointer
+        &.active
+          color #ff9bf7
+        &:hover
+          color #ff9bf7

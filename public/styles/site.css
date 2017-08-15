@@ -81,6 +81,16 @@ body .app__container {
   font-style: normal;
   src: url("../../fonts/Roboto-Regular.ttf");
 }
+@font-face {
+  font-family: Roboto-Bold;
+  font-style: normal;
+  src: url("../../fonts/Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: Roboto-Thin;
+  font-style: normal;
+  src: url("../../fonts/Roboto-Thin.ttf");
+}
 * {
   font-family: Roboto;
 }
@@ -142,7 +152,7 @@ body .app__container {
   height: 100%;
   background-size: contain;
   cursor: pointer;
-  transition: background-image 0.3s;
+  transition: background-image 0.3s linear;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -159,7 +169,7 @@ body .app__container {
   width: 0px;
   background: #eaeaea;
 /*transition: width 250ms ease-in-out;*/
-  transition: width 5s ease-in-out;
+  transition: width 5s linear;
 }
 .home {
   text-align: center;
@@ -179,10 +189,23 @@ body .app__container {
 .about .info h4,
 .about .info p.upper {
   margin-top: 0;
-  text-transform: uppercase;
 }
 .about .info p.mail {
   text-decoration: underline;
+}
+.about .info .bio {
+  text-align: center;
+}
+.about .info .bio p {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: justify;
+  line-height: 1.5;
+  font-family: Roboto-Thin;
+}
+.about .info .bio p strong {
+  color: #ff9bf7;
+  font-family: Roboto-Thin;
 }
 .work::after {
   content: '';
@@ -216,7 +239,10 @@ body .app__container {
   transform: translate(-50%, -50%);
 }
 .work .sidebar {
-  padding: 0 1em 1em 1em;
+  box-sizing: border-box;
+  position: relative;
+  height: 560px;
+  padding: 0 2em 1em 1em;
   float: left;
   clear: none;
   text-align: inherit;
@@ -233,8 +259,65 @@ body .app__container {
   font-size: 16px;
   margin-top: 0;
   padding: 7px;
+  font-family: Roboto;
   background-color: #000;
   color: #fff;
+  margin-bottom: 50px;
+}
+.work .sidebar p {
+  text-align: justify;
+  font-family: Roboto-Thin;
+}
+.work .sidebar .work-tabs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  list-style-type: none;
+  padding-left: 0;
+  width: 100%;
+}
+.work .sidebar .work-tabs li {
+  text-transform: lowercase;
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  font-style: 20px;
+  font-family: Roboto;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.work .sidebar .work-tabs li.active {
+  color: #ff9bf7;
+}
+.work .sidebar .work-tabs li:hover {
+  color: #ff9bf7;
+}
+.work .sidebar .work-text {
+  position: absolute;
+  bottom: 0;
+  left: 1em;
+  list-style-type: none;
+  padding-left: 0;
+  width: 100%;
+}
+.work .sidebar .work-text li {
+  font-family: Roboto;
+}
+.work .sidebar .work-text li:not(separator) {
+  font-family: Roboto-Thin;
+  text-transform: lowercase;
+  margin: 0 5px;
+  display: inline-block;
+  text-align: center;
+  font-style: 20px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.work .sidebar .work-text li:not(separator).active {
+  color: #ff9bf7;
+}
+.work .sidebar .work-text li:not(separator):hover {
+  color: #ff9bf7;
 }
 .contact {
   padding: 0 1em 1em 1em;

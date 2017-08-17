@@ -24,14 +24,14 @@ const propTypes = {
 
 const defaultProps = {
   gallery : null
-}
+};
 
 class Home extends React.Component{
   constructor(props){
     super(props);
     this.state = {
       gallery : null
-    }
+    };
   }
 
   componentWillMount(){
@@ -42,12 +42,12 @@ class Home extends React.Component{
           if (!err && res.ok) {
             this.setState({gallery: res.body.data});
           }
-      }.bind(this))
+      }.bind(this));
 
   }
 
   render() {
-    const {gallery} = this.state
+    const {gallery} = this.state;
 		return (
 			<div className="app__home home">
   			<div className="wrapper">
@@ -55,7 +55,7 @@ class Home extends React.Component{
         </div>
       </div>
 		);
-  };
+  }
 }
 
 Home.defaultProps = defaultProps;

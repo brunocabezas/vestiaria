@@ -6,7 +6,7 @@
   import Work from './Work';
   import About from './About';
   import Contact from './Contact';
-  import PropTypes from 'prop-types'
+  import PropTypes from 'prop-types';
   import {render} from 'react-dom';
 
   const navLinks = [
@@ -14,7 +14,7 @@
     { label: 'Work', key: 'work', href: '/work' },
     { label: 'About', key: 'about', href: '/about' },
     { label: 'Contact', key: 'contact', href: '/contact' }
-  ]
+  ];
 
   const propTypes = {
     section : PropTypes.oneOf([
@@ -27,12 +27,12 @@
     homeGallery : PropTypes.array,
     // slug of work route
     workActive : PropTypes.string
-  }
+  };
 
   const defaultProps = {
     section : 'homeDefault',
     works : null
-  }
+  };
 
   class VestiariaApp extends React.Component{
     constructor(props){
@@ -40,7 +40,7 @@
       this.state = {
         // not used right now
         workGalleryOpen : false
-      }
+      };
       this.toggleGallery = this.toggleGallery.bind(this);
     }
 
@@ -51,7 +51,7 @@
     render() {
       const {section,works,workActive} = this.props;
       let content;
-      console.log(section)
+      // console.log(section);
       if (section==='home')
         content = <Home />;
       else if (section==='about')
@@ -79,7 +79,7 @@
           </div>
         </div>
   		);
-    };
+    }
   }
 
   VestiariaApp.defaultProps = defaultProps;

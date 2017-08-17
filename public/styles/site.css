@@ -271,30 +271,6 @@ body .app__container,
   text-align: justify;
   font-family: Roboto-Thin;
 }
-.app__work .app__work-info .work-tabs {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  list-style-type: none;
-  padding-left: 0;
-  width: 100%;
-}
-.app__work .app__work-info .work-tabs li {
-  text-transform: lowercase;
-  width: 50%;
-  display: inline-block;
-  text-align: center;
-  font-style: 20px;
-  font-family: Roboto;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-.app__work .app__work-info .work-tabs li.active {
-  color: #ff9bf7;
-}
-.app__work .app__work-info .work-tabs li:hover {
-  color: #ff9bf7;
-}
 .app__work .app__work-info .work-text {
   position: absolute;
   bottom: 0;
@@ -305,21 +281,21 @@ body .app__container,
 }
 .app__work .app__work-info .work-text li {
   font-family: Roboto;
+  display: inline-block;
 }
-.app__work .app__work-info .work-text li:not(separator) {
+.app__work .app__work-info .work-text .work-button {
   font-family: Roboto-Thin;
   text-transform: lowercase;
   margin: 0 5px;
-  display: inline-block;
   text-align: center;
   font-style: 20px;
   transition: all 0.3s;
   cursor: pointer;
 }
-.app__work .app__work-info .work-text li:not(separator).active {
+.app__work .app__work-info .work-text .work-button.work-button--active {
   color: #ff9bf7;
 }
-.app__work .app__work-info .work-text li:not(separator):hover {
+.app__work .app__work-info .work-text .work-button:hover {
   color: #ff9bf7;
 }
 .app__contact {

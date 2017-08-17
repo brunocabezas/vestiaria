@@ -32,7 +32,7 @@ class Header extends React.Component{
         </ul>
       </div>
 		);
-  };
+  }
 }
 
 Header.propTypes = propTypes;

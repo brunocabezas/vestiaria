@@ -16,7 +16,7 @@ class Contact extends React.Component{
         <span className="dash">-</span>
       </div>
   	);
-  };
+  }
 }
 
 export default Contact;

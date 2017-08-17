@@ -16,7 +16,7 @@ const propTypes = {
 
 const defaultProps = {
   images : null
-}
+};
 
 class Gallery extends React.Component{
   constructor(props){
@@ -35,7 +35,7 @@ class Gallery extends React.Component{
     if (active>=images.length)
       return;
 
-    this.setState({active:active+1})
+    this.setState({active:active+1});
   }
 
   render() {
@@ -55,7 +55,7 @@ class Gallery extends React.Component{
         </div>
       </div>
 		);
-  };
+  }
 }
 
 Gallery.defaultProps = defaultProps;

@@ -27,7 +27,7 @@ class WorkGrid extends React.Component{
     super(props);
     this.state = {
       works : null
-    }
+    };
   }
 
   componentWillMount(){
@@ -38,7 +38,7 @@ class WorkGrid extends React.Component{
           if (!err && res.ok) {
             this.setState({works: res.body.data});
           }
-      }.bind(this))
+      }.bind(this));
   }
 
   render() {
@@ -61,11 +61,11 @@ class WorkGrid extends React.Component{
                   href={"/works/"+work.slug}>
                 </a>
               </div>
-          )
+          );
         })}
       </div>
 		);
-  };
+  }
 }
 
 WorkGrid.defaultProps = defaultProps;

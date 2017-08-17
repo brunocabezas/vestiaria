@@ -26,7 +26,7 @@ const defaultProps = {
 class Work extends React.Component{
   constructor(props){
     super(props);
-    console.log(props);
+    // console.log(props);
     this.state = {
       work : null,
       //  hold the current content state, could be 'video' or 'gallery'
@@ -49,15 +49,15 @@ class Work extends React.Component{
 
               this.setState({work,content});
             }
-        }.bind(this))
+        }.bind(this));
     }
   }
 
   showGallery(){
-    this.setState({content:'gallery'})
+    this.setState({content:'gallery'});
   }
   showVideo(){
-    this.setState({content:'video'})
+    this.setState({content:'video'});
   }
   render() {
     const {work,content} = this.state,
@@ -68,8 +68,11 @@ class Work extends React.Component{
           <Gallery images={work.gallery} />
         ) || null;
 
+    const videoButtonClass = this.state.content!=='video' ? "work-button":
+      'work-button work-button--active',
+      galleryButtonClass = this.state.content!=='gallery' ? "work-button":
+            'work-button work-button--active';
 
-    console.log(work)
 		return !work ? null :
       <div className="app__work">
         <div className="app__work-info">
@@ -77,9 +80,9 @@ class Work extends React.Component{
           <p>{work.abstract}</p>
           {hasGallery && hasVideo &&
             <span className="work-text">
-              <li className="work-button work-button--active" onClick={this.showVideo}>video</li>
+              <li className={videoButtonClass} onClick={this.showVideo}>video</li>
               <li className="separator">|</li>
-              <li className="work-button" onClick={this.showGallery}> photos</li>}
+              <li className={galleryButtonClass} onClick={this.showGallery}> photos</li>
             </span>
           }
         </div>
@@ -88,7 +91,7 @@ class Work extends React.Component{
             {displayContent}
         </div>
       </div>;
-  };
+  }
 }
 
 Work.defaultProps = defaultProps;

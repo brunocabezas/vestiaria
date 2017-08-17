@@ -28,26 +28,6 @@
     p
       text-align justify
       font-family Roboto-Thin
-    .work-tabs
-      position absolute
-      bottom 0
-      left 0
-      list-style-type none
-      padding-left 0
-      width 100%
-      li
-        text-transform lowercase
-        width 50%
-        display inline-block
-        text-align center
-        font-style 20px
-        font-family Roboto
-        transition all 0.3s
-        cursor pointer
-        &.active
-          color #ff9bf7
-        &:hover
-          color #ff9bf7
     .work-text
       position absolute
       bottom 0
@@ -57,16 +37,16 @@
       width 100%
       li
         font-family Roboto
-      li:not(separator)
+        display inline-block
+      .work-button
         font-family Roboto-Thin
         text-transform lowercase
         margin 0 5px;
-        display inline-block
         text-align center
         font-style 20px
         transition all 0.3s
         cursor pointer
-        &.active
+        &.work-button--active
           color #ff9bf7
         &:hover
           color #ff9bf7

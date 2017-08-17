@@ -7,7 +7,7 @@ const propTypes = {
 
 const defaultProps = {
   url : null
-}
+};
 
 class Video extends React.Component{
   constructor(props){
@@ -27,7 +27,7 @@ class Video extends React.Component{
       var splitted = url.split('/watch?v='),
         id = splitted[splitted.length-1];
       parsedUrl = "https://www.youtube.com/embed/"+id;
-    };
+    }
 
     return !url ? null :
       <iframe width="100%" height="360" frameBorder="0" allowFullScreen

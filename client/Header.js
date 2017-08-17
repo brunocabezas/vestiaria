@@ -3,7 +3,8 @@ import {render} from 'react-dom';
 import PropTypes from 'prop-types';
 
 const propTypes = {
-  links : PropTypes.array.isRequired
+  links : PropTypes.array.isRequired,
+  active : PropTypes.string
 };
 
 class Header extends React.Component{
@@ -17,14 +18,17 @@ class Header extends React.Component{
 		return (
 			<div className="app__header">
         <ul className="app__header-nav header__menu child vertical">
-          {links.map((link,i)=>(
-            <li className="app__header-link" key={i+link.label}>
-              {link.label==="Work" ?
-                <a data-featherlight="#mylightbox" href="#">work</a> :
-                <a title={link.label} href={link.href}>{link.label}</a>
-              }
-            </li>
-          ))}
+          {links.map((link,i)=>{
+            const className = link.key===this.props.active ? 'active' : "";
+            return (
+              <li className="app__header-link" key={i+link.label}>
+                {link.label==="Work" ?
+                  <a data-featherlight="#mylightbox" href="#">work</a> :
+                  <a className={className} title={link.label} href={link.href}>{link.label}</a>
+                }
+              </li>
+            );
+          })}
         </ul>
       </div>
 		);

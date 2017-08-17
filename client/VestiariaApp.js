@@ -4,6 +4,8 @@
   import Home from './Home';
   import WorkGrid from './WorkGrid';
   import Work from './Work';
+  import About from './About';
+  import Contact from './Contact';
   import PropTypes from 'prop-types'
   import {render} from 'react-dom';
 
@@ -53,7 +55,9 @@
       if (section==='home')
         content = <Home />;
       else if (section==='about')
-        content = 'state - 1';
+        content = <About />;
+      else if (section==='contact')
+        content = <Contact />;
       else if (section==='work')
         content = <Work slug={workActive} />;
       else
@@ -63,6 +67,7 @@
   			<div className="app">
           <Header
             links={navLinks}
+            active = {section}
             worksActive ={this.state.workGalleryOpen}
             openWorks = {this.toggleGallery}
           />

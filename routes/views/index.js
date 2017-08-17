@@ -1,6 +1,8 @@
 var keystone = require('keystone');
 var Work = keystone.list('Work');
 var Gallery = keystone.list('Gallery');
+var React = require('react');
+var ReactDOM = require('react-dom');
 
 exports = module.exports = function (req, res) {
 

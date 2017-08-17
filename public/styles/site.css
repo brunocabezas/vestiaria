@@ -2,12 +2,14 @@
 html {
   height: 100%;
 }
-body {
+body,
+.app {
   margin: 0;
   min-height: 100%;
   height: 100%;
 }
-body header {
+body .app__header,
+.app .app__header {
   box-sizing: border-box;
   position: absolute;
   width: 100%;
@@ -15,18 +17,21 @@ body header {
   padding: 10px;
   text-align: right;
 }
-body header .header__menu {
+body .app__header .app__header-nav,
+.app .app__header .app__header-nav {
   margin: 0;
   right: 10px;
   list-style-type: none;
   text-align: right;
 }
-body header .header__menu::after {
+body .app__header .app__header-nav::after,
+.app .app__header .app__header-nav::after {
   content: '';
   display: table;
   clear: both;
 }
-body header .header__menu li {
+body .app__header .app__header-nav .app__header-link,
+.app .app__header .app__header-nav .app__header-link {
   float: left;
   clear: none;
   text-align: inherit;
@@ -39,29 +44,36 @@ body header .header__menu li {
   text-align: center;
   vertical-align: middle;
 }
-body header .header__menu li::after {
+body .app__header .app__header-nav .app__header-link::after,
+.app .app__header .app__header-nav .app__header-link::after {
   content: '';
   display: table;
   clear: both;
 }
-body header .header__menu li a {
+body .app__header .app__header-nav .app__header-link a,
+.app .app__header .app__header-nav .app__header-link a {
   transition: color 0.3;
   text-decoration: none;
   text-transform: lowercase;
   color: #000;
 }
-body header .header__menu li a:hover {
+body .app__header .app__header-nav .app__header-link a:hover,
+.app .app__header .app__header-nav .app__header-link a:hover {
   color: #ff9bf7;
 }
-body header .header__menu li.social-feed img,
-body header .header__menu li.social-feed a {
+body .app__header .app__header-nav .app__header-link.social-feed img,
+.app .app__header .app__header-nav .app__header-link.social-feed img,
+body .app__header .app__header-nav .app__header-link.social-feed a,
+.app .app__header .app__header-nav .app__header-link.social-feed a {
   height: 26px;
   width: 26px;
 }
-body header .header__menu li.social-feed img {
+body .app__header .app__header-nav .app__header-link.social-feed img,
+.app .app__header .app__header-nav .app__header-link.social-feed img {
   vertical-align: bottom;
 }
-body .app__container {
+body .app__container,
+.app .app__container {
   padding-top: 50px;
   height: calc(100% - 50px);
 }
@@ -147,7 +159,11 @@ body .app__container {
   margin-left: 0 !important;
   min-height: 100%;
 }
-#imageButton {
+.gallery {
+  width: 100%;
+  height: 100%;
+}
+.gallery #imageButton {
   width: 100%;
   height: 100%;
   background-size: contain;
@@ -156,14 +172,14 @@ body .app__container {
   background-repeat: no-repeat;
   background-position: center;
 }
-.progress-bar {
+.gallery .progress-bar {
   width: 100%;
   height: 5px;
   background: #fff;
   padding: 0;
   display: block;
 }
-.progress-bar-fill {
+.gallery .progress-bar-fill {
   display: block;
   height: 5px;
   width: 0px;
@@ -207,12 +223,12 @@ body .app__container {
   color: #ff9bf7;
   font-family: Roboto-Thin;
 }
-.work::after {
+.app__work::after {
   content: '';
   display: table;
   clear: both;
 }
-.work .content {
+.app__work .app__work-display {
   float: left;
   clear: none;
   text-align: inherit;
@@ -226,19 +242,19 @@ body .app__container {
   background-color: #eaeaea;
   max-width: 560px;
 }
-.work .content::after {
+.app__work .app__work-display::after {
   content: '';
   display: table;
   clear: both;
 }
-.work .content iframe {
+.app__work .app__work-display iframe {
   position: absolute;
   transform-style: preserve-3d;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.work .sidebar {
+.app__work .app__work-info {
   box-sizing: border-box;
   position: relative;
   height: 560px;
@@ -250,12 +266,12 @@ body .app__container {
   margin-left: 0%;
   margin-right: 0%;
 }
-.work .sidebar::after {
+.app__work .app__work-info::after {
   content: '';
   display: table;
   clear: both;
 }
-.work .sidebar h1 {
+.app__work .app__work-info h1 {
   font-size: 16px;
   margin-top: 0;
   padding: 7px;
@@ -264,11 +280,11 @@ body .app__container {
   color: #fff;
   margin-bottom: 50px;
 }
-.work .sidebar p {
+.app__work .app__work-info p {
   text-align: justify;
   font-family: Roboto-Thin;
 }
-.work .sidebar .work-tabs {
+.app__work .app__work-info .work-tabs {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -276,7 +292,7 @@ body .app__container {
   padding-left: 0;
   width: 100%;
 }
-.work .sidebar .work-tabs li {
+.app__work .app__work-info .work-tabs li {
   text-transform: lowercase;
   width: 50%;
   display: inline-block;
@@ -286,13 +302,13 @@ body .app__container {
   transition: all 0.3s;
   cursor: pointer;
 }
-.work .sidebar .work-tabs li.active {
+.app__work .app__work-info .work-tabs li.active {
   color: #ff9bf7;
 }
-.work .sidebar .work-tabs li:hover {
+.app__work .app__work-info .work-tabs li:hover {
   color: #ff9bf7;
 }
-.work .sidebar .work-text {
+.app__work .app__work-info .work-text {
   position: absolute;
   bottom: 0;
   left: 1em;
@@ -300,10 +316,10 @@ body .app__container {
   padding-left: 0;
   width: 100%;
 }
-.work .sidebar .work-text li {
+.app__work .app__work-info .work-text li {
   font-family: Roboto;
 }
-.work .sidebar .work-text li:not(separator) {
+.app__work .app__work-info .work-text li:not(separator) {
   font-family: Roboto-Thin;
   text-transform: lowercase;
   margin: 0 5px;
@@ -313,10 +329,10 @@ body .app__container {
   transition: all 0.3s;
   cursor: pointer;
 }
-.work .sidebar .work-text li:not(separator).active {
+.app__work .app__work-info .work-text li:not(separator).active {
   color: #ff9bf7;
 }
-.work .sidebar .work-text li:not(separator):hover {
+.app__work .app__work-info .work-text li:not(separator):hover {
   color: #ff9bf7;
 }
 .contact {

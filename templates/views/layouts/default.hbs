@@ -4,12 +4,11 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>claudia robles | vestiaria </title>
+		<title>Claudia Robles</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 		<meta name="description" content="Claudia Robles, diseñadora de vestuario, estilista y directora artistica que reside en la ciudad de Santiago. En los ulitmos 27 años, Claudia ha
       trabajado como diseñadora en distintos proyectos relacionados tanto en el área artística como comercial.">
-		<META NAME="keyword" CONTENT="fashion, clothes,
-	     fashion designer, visual artist, design">
+		<meta name="robots" content="index, follow">
 		{{!--
 			//- jQuery 1.11.3 is included by default, and required by both Bootstrap
 			//- and the KeystoneJS Content Editor. If you are not targeting IE8,
@@ -39,8 +38,17 @@
 
 	</head>
 	<body>
-		{{> header links=navLinks works=works }}
+		<script type="text/javascript">
+			var section = `{{{section}}}`,
+				works = JSON.parse('{{{json works}}}') || [],
+				body = null,
+				gallery = null,
+				work = '{{{slug}}}';
+		</script>
+		<div id="app"></div>
+		<script src="/js/VestiariaApp.js"></script>
+		{{!-- {{> header links=navLinks works=works }}
 		{{> app }}
-		{{{isAdminEditorJS user}}}
+		{{{isAdminEditorJS user}}} --}}
 	</body>
 </html>

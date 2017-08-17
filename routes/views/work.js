@@ -8,11 +8,10 @@ exports = module.exports = function (req, res) {
 	view.query('works', keystone.list('Work').model.find().sort('publishedDate'));
 	// Load work with workId url param
 	const workSlug = req.params.slug;
-
+	locals.slug = workSlug;
 	// Load the current post
 	view.on('init', function (next) {
 		var q = Works.model.findOne({slug : workSlug});
-		
 		q.exec(function (err, result) {
 			//  videoUrl its a valid parsed url to display vimeo and youtube videos
 			var videoUrl = null;
@@ -33,6 +32,9 @@ exports = module.exports = function (req, res) {
 			next(err);
 		});
 	});
+	// item in the header navigation.
+	locals.section = 'work';
+
 	// Render the view
-	view.render('work');
+	view.render('index');
 };

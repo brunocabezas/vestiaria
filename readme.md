@@ -24,7 +24,7 @@ The app has the following npm tasks defined:
 
 ```
 start -› start the application on dev env.
-start:prod -› start the application on with PORT=80 as env. variable
+start:prod -› start the application on with PORT=80 as env variable
 eslint -› runs the linter
 ```
 

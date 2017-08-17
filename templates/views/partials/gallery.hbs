@@ -1,7 +1,6 @@
 <div id="imageButton" style="background-image:url({{cloudinaryUrl photos.[0]}})" />
 
 <script type="text/javascript">
-console.log('{{{json photos}}}')
   var images = JSON.parse('{{{json photos}}}'),
       i = 1;
   for (var j=images.length; j--;) {

@@ -2,6 +2,14 @@
   <div class="sidebar">
     <h1>{{work.name}}</h1>
     <p>{{work.abstract}}</p>
+
+    {{!-- <ul class="work-tabs">
+      <li class="active">video</li><li>photos</li>
+    </ul> --}}
+    <span class="work-text">
+      <li class="active">video</li><li class="separator">|</li><li> photos</li>
+    </span>
+
   </div>
   <div class="content">
     {{#if work.video}}
@@ -14,3 +22,7 @@
 
   </div>
 </div>
+<script type="text/javascript">
+  var work = JSON.parse('{{{json work}}}') || null;
+  console.log(work);
+</script>

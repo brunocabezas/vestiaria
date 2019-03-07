@@ -39,7 +39,7 @@ class Home extends React.Component{
     superagent
       .get('/api/home_gallery')
       .end(function (err, res) {
-          if (!err && res.ok) {
+          if (!err && res.ok && res.body && res.body.data) {
             this.setState({gallery: res.body.data});
           }
       }.bind(this));

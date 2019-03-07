@@ -35,7 +35,7 @@ class WorkGrid extends React.Component{
     superagent
       .get('/api/works')
       .end(function (err, res) {
-          if (!err && res.ok) {
+          if (!err && res.ok && res.body && res.body.data) {
             this.setState({works: res.body.data});
           }
       }.bind(this));

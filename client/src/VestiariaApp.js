@@ -22,7 +22,7 @@
       'about',
       'contact',
       'work'
-    ]),
+    ]).isRequired,
     works : PropTypes.array,
     homeGallery : PropTypes.array,
     // slug of work route
@@ -30,7 +30,6 @@
   };
 
   const defaultProps = {
-    section : 'homeDefault',
     works : []
   };
 
@@ -92,7 +91,7 @@
       workActive = {work}
 
       children = {body}
-      homeGallery={gallery}
+      homeGallery={homeGallery}
     />,
   	document.getElementById('app')
   );

@@ -35,53 +35,66 @@ var Work = keystone.list('Work');
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
-	app.get('/api/home_gallery', function (req ,res) {
-	    Gallery.model.findOne()
-				.where('name','home_gallery')
-				.exec()
-				.then(function (data) {
-	            res.send({
-	                code: 200,
-	                data: data
-	            })
-	        }, function(err){
-	            res.send({
-	                code: 500,
-	                error: err
-	            })
-	        });
+	app.get('/api/home_gallery', function (req, res) {
+		Gallery.model
+			.findOne()
+			.where('name', 'home_gallery')
+			.exec()
+			.then(
+				function (data) {
+					res.send({
+						code: 200,
+						data: data,
+					});
+				},
+				function (err) {
+					res.send({
+						code: 500,
+						error: err,
+					});
+				}
+			);
 	});
 
-	app.get('/api/works', function (req ,res) {
-			Work.model.find()
-				.sort('publishedDate')
-				.exec()
-				.then(function (data) {
-							res.send({
-									code: 200,
-									data: data
-							})
-					}, function(err){
-							res.send({
-									code: 500,
-									error: err
-							})
+	app.get('/api/works', function (req, res) {
+		Work.model
+			.find()
+			.sort('publishedDate')
+			.exec()
+			.then(
+				function (data) {
+					res.send({
+						code: 200,
+						data: data,
 					});
+				},
+				function (err) {
+					res.send({
+						code: 500,
+						error: err,
+					});
+				}
+			);
 	});
 
-	app.get('/api/works/:slug', function (req ,res) {
-			Work.model.findOne({slug : req.params.slug})
-				.exec().then(function (data) {
-							res.send({
-									code: 200,
-									data: data
-							})
-					}, function(err){
-							res.send({
-									code: 500,
-									error: err
-							})
+	app.get('/api/works/:slug', function (req, res) {
+		Work.model
+			.findOne({ slug: req.params.slug })
+			.exec()
+			.then(
+				function (data) {
+					res.send({
+						code: 200,
+						data: data,
 					});
+				},
+				function (err) {
+					res.send({
+						code: 500,
+						error: err,
+					});
+				}
+			);
 	});
 	app.get('/', routes.views.index);
 	app.get('/gallery', routes.views.gallery);
@@ -91,5 +104,4 @@ exports = module.exports = function (app) {
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
-
 };

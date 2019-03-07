@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "lint": "esw -w --fix ./client",
-    "start": "node keystone.js && lint",
+    "start": "npm run build:react && node keystone.js && lint",
     "start:react": "parcel ./client/index.html",
-    "build:react": "parcel build client/VestiariaApp.js -d public/js",
+    "build:react": "parcel build client/src/VestiariaApp.js -d public/js",
     "start:prod": "PORT=80 node keystone.js"
   },
   "dependencies": {

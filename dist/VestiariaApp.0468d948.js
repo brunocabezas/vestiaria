@@ -21899,7 +21899,7 @@ if ("development" !== 'production') {
   // http://fb.me/prop-types-in-prod
   module.exports = require('./factoryWithThrowingShims')();
 }
-},{"./factoryWithTypeCheckers":"../node_modules/prop-types/factoryWithTypeCheckers.js"}],"Header.js":[function(require,module,exports) {
+},{"./factoryWithTypeCheckers":"../node_modules/prop-types/factoryWithTypeCheckers.js"}],"src/Header.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24060,7 +24060,7 @@ request.put = function (url, data, fn) {
   if (fn) req.end(fn);
   return req;
 };
-},{"component-emitter":"../node_modules/component-emitter/index.js","./request-base":"../node_modules/superagent/lib/request-base.js","./is-object":"../node_modules/superagent/lib/is-object.js","./response-base":"../node_modules/superagent/lib/response-base.js","./agent-base":"../node_modules/superagent/lib/agent-base.js"}],"Gallery.js":[function(require,module,exports) {
+},{"component-emitter":"../node_modules/component-emitter/index.js","./request-base":"../node_modules/superagent/lib/request-base.js","./is-object":"../node_modules/superagent/lib/is-object.js","./response-base":"../node_modules/superagent/lib/response-base.js","./agent-base":"../node_modules/superagent/lib/agent-base.js"}],"src/Gallery.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24172,7 +24172,7 @@ Gallery.defaultProps = defaultProps;
 Gallery.propTypes = propTypes;
 var _default = Gallery;
 exports.default = _default;
-},{"react":"../node_modules/react/react.js","react-dom":"../node_modules/react-dom/index.js","superagent":"../node_modules/superagent/lib/client.js","prop-types":"../node_modules/prop-types/index.js"}],"Home.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/react.js","react-dom":"../node_modules/react-dom/index.js","superagent":"../node_modules/superagent/lib/client.js","prop-types":"../node_modules/prop-types/index.js"}],"src/Home.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24282,7 +24282,7 @@ Home.defaultProps = defaultProps;
 Home.propTypes = propTypes;
 var _default = Home;
 exports.default = _default;
-},{"react":"../node_modules/react/react.js","react-dom":"../node_modules/react-dom/index.js","superagent":"../node_modules/superagent/lib/client.js","./Gallery":"Gallery.js","prop-types":"../node_modules/prop-types/index.js"}],"WorkGrid.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/react.js","react-dom":"../node_modules/react-dom/index.js","superagent":"../node_modules/superagent/lib/client.js","./Gallery":"src/Gallery.js","prop-types":"../node_modules/prop-types/index.js"}],"src/WorkGrid.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24398,7 +24398,7 @@ WorkGrid.defaultProps = defaultProps;
 WorkGrid.propTypes = propTypes;
 var _default = WorkGrid;
 exports.default = _default;
-},{"react":"../node_modules/react/react.js","react-dom":"../node_modules/react-dom/index.js","superagent":"../node_modules/superagent/lib/client.js","prop-types":"../node_modules/prop-types/index.js"}],"Video.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/react.js","react-dom":"../node_modules/react-dom/index.js","superagent":"../node_modules/superagent/lib/client.js","prop-types":"../node_modules/prop-types/index.js"}],"src/Video.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24481,7 +24481,7 @@ Video.defaultProps = defaultProps;
 Video.propTypes = propTypes;
 var _default = Video;
 exports.default = _default;
-},{"react":"../node_modules/react/react.js","prop-types":"../node_modules/prop-types/index.js"}],"Work.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/react.js","prop-types":"../node_modules/prop-types/index.js"}],"src/Work.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24633,7 +24633,7 @@ Work.defaultProps = defaultProps;
 Work.propTypes = propTypes;
 var _default = Work;
 exports.default = _default;
-},{"react":"../node_modules/react/react.js","react-dom":"../node_modules/react-dom/index.js","superagent":"../node_modules/superagent/lib/client.js","prop-types":"../node_modules/prop-types/index.js","./Gallery":"Gallery.js","./Video":"Video.js"}],"About.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/react.js","react-dom":"../node_modules/react-dom/index.js","superagent":"../node_modules/superagent/lib/client.js","prop-types":"../node_modules/prop-types/index.js","./Gallery":"src/Gallery.js","./Video":"src/Video.js"}],"src/About.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24692,7 +24692,7 @@ function (_React$Component) {
 
 var _default = About;
 exports.default = _default;
-},{"react":"../node_modules/react/react.js"}],"Contact.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/react.js"}],"src/Contact.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24758,7 +24758,7 @@ function (_React$Component) {
 
 var _default = Contact;
 exports.default = _default;
-},{"react":"../node_modules/react/react.js"}],"VestiariaApp.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/react.js"}],"src/VestiariaApp.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -24894,7 +24894,7 @@ VestiariaApp.propTypes = propTypes;
   children: body,
   homeGallery: gallery
 }), document.getElementById('app'));
-},{"react":"../node_modules/react/react.js","./Header":"Header.js","./Home":"Home.js","./WorkGrid":"WorkGrid.js","./Work":"Work.js","./About":"About.js","./Contact":"Contact.js","prop-types":"../node_modules/prop-types/index.js","react-dom":"../node_modules/react-dom/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/react.js","./Header":"src/Header.js","./Home":"src/Home.js","./WorkGrid":"src/WorkGrid.js","./Work":"src/Work.js","./About":"src/About.js","./Contact":"src/Contact.js","prop-types":"../node_modules/prop-types/index.js","react-dom":"../node_modules/react-dom/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -24921,7 +24921,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56832" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59672" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
@@ -25063,5 +25063,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","VestiariaApp.js"], null)
-//# sourceMappingURL=/VestiariaApp.12976228.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","src/VestiariaApp.js"], null)
+//# sourceMappingURL=/VestiariaApp.0468d948.map

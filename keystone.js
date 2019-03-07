@@ -22,7 +22,6 @@ keystone.init({
 
 	'custom engine': handlebars.create({
 		layoutsDir: 'templates/views/layouts',
-		partialsDir: 'templates/views/partials',
 		defaultLayout: 'default',
 		helpers: new require('./templates/views/helpers')(),
 		extname: '.hbs',
@@ -38,7 +37,6 @@ keystone.init({
 
 // Load your project's Models
 keystone.import('models');
-// keystone.set('cloudinary config', '943359926363657:bQbTT6zW_GGdLTCvovbWA4Hy-QU@vestiaria-cloud' );
 
 // Setup common locals for your templates. The following are required for the
 // bundled templates and layouts. Any runtime locals (that should be set uniquely

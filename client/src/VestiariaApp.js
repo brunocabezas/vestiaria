@@ -31,7 +31,7 @@
 
   const defaultProps = {
     section : 'homeDefault',
-    works : null
+    works : []
   };
 
   class VestiariaApp extends React.Component{

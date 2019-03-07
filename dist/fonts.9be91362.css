@@ -1,0 +1,18 @@
+@font-face {
+  font-family: Roboto;
+  font-style: normal;
+  src: url("Roboto-Regular.753927d8.ttf");
+}
+@font-face {
+  font-family: Roboto-Bold;
+  font-style: normal;
+  src: url("Roboto-Bold.fc87cf8b.ttf");
+}
+@font-face {
+  font-family: Roboto-Thin;
+  font-style: normal;
+  src: url("Roboto-Thin.4f96120c.ttf");
+}
+* {
+  font-family: Roboto;
+}

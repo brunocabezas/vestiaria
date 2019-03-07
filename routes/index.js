@@ -17,8 +17,6 @@
  * See the Express application routing documentation for more information:
  * http://expressjs.com/api.html#app.VERB
  */
-var babelify = require('babelify');
-var browserify = require('browserify-middleware');
 var keystone = require('keystone');
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
@@ -37,14 +35,6 @@ var Work = keystone.list('Work');
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
-	// Views
-	app.use('/js', browserify('./client', {
-		transform: [babelify.configure({
-			presets : ["react","es2015"],
-			plugins: ['transform-object-rest-spread']
-		})],
-	}));
-
 	app.get('/api/home_gallery', function (req ,res) {
 	    Gallery.model.findOne()
 				.where('name','home_gallery')

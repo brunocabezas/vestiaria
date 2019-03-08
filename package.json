@@ -7,7 +7,7 @@
     "start": "npm run build:react && node keystone.js && lint",
     "start:react": "parcel ./client/index.html",
     "build:react": "parcel build client/src/VestiariaApp.js -d public/js",
-    "start:prod": "PORT=80 node keystone.js"
+    "build": "PORT=80 node keystone.js"
   },
   "dependencies": {
     "async": "2.1.4",
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "dotenv": "4.0.0",
@@ -32,6 +33,7 @@
     "parcel-bundler": "^1.11.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
+    "react-dom": "^16.8.4",
     "stylus": "0.54.5",
     "superagent": "^3.5.2"
   }

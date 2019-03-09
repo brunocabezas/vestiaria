@@ -21,6 +21,8 @@
 		"prop-types": "^15.7.2",
 		"react": "^16.8.4",
 		"react-dom": "^16.8.4",
+		"react-shimmer": "^1.2.1",
+		"react-suspense-image-loader": "^1.0.19",
 		"stylelint-config-recommended": "^2.1.0",
 		"superagent": "^3.8.3"
 	},

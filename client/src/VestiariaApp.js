@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { render } from 'react-dom';
 import Header from './common/Header';
 import Home from './Home';
-import WorksGrid from './common/WorksGrid';
+import WorkGrid from './common/WorkGrid';
 import Modal from './common/Modal';
 import Work from './Work';
 import About from './About';
@@ -12,6 +12,7 @@ import Contact from './Contact';
 import '../assets/site.css';
 import '../assets/fonts.css';
 
+// TODO check prop types def
 const propTypes = {
   section: p.sections.isRequired,
   // works: PropTypes.array.isRequired,
@@ -24,63 +25,49 @@ const propTypes = {
 //   works: []
 // };
 
-class VestiariaApp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      // not used right now
-      // workGalleryOpen: false,
-      showModal: false
-    };
-    this.toggleGallery = this.toggleGallery.bind(this);
+function VestiariaApp(props) {
+  const [showModal, setShowModal] = useState(false);
+
+  function toggleModal() {
+    setShowModal(!showModal);
   }
 
-  toggleGallery() {
-    this.setState(prevState => ({ showModal: !prevState.showModal }));
-  }
+  const { section, workActive, workGalleryOpen } = props;
+  let content;
+  // console.log(section);
+  if (section === 'home') content = <Home />;
+  else if (section === 'about') content = <About />;
+  else if (section === 'contact') content = <Contact />;
+  else if (section === 'work') content = <Work slug={workActive} />;
+  else content = null;
 
-  render() {
-    const { section, workActive } = this.props;
-    const { showModal, workGalleryOpen } = this.props;
-    let content;
-    // console.log(section);
-    if (section === 'home') content = <Home />;
-    else if (section === 'about') content = <About />;
-    else if (section === 'contact') content = <Contact />;
-    else if (section === 'work') content = <Work slug={workActive} />;
-    else content = null;
-
-    console.log(showModal);
-    return (
-      <div className="app">
-        <Header
-          active={section}
-          worksActive={workGalleryOpen}
-          toggleWorks={this.toggleGallery}
-        />
-        <Modal show={showModal} handleClose={this.toggleGallery}>
-          <WorksGrid />
-        </Modal>
-        <div className="app__container" id="app__container">
-          {content}
-        </div>
+  return (
+    <div className="app">
+      <Header
+        active={section}
+        worksActive={workGalleryOpen}
+        toggleWorks={toggleModal}
+      />
+      <Modal show={showModal} handleClose={toggleModal}>
+        <WorkGrid />
+      </Modal>
+      <div className="app__container" id="app__container">
+        {content}
       </div>
-    );
-  }
+    </div>
+  );
 }
-
-// VestiariaApp.defaultProps = defaultProps;
 VestiariaApp.propTypes = propTypes;
 
-/* eslint-disable no-undef */
+/* eslint-disable */
 render(
   <VestiariaApp
     works={works}
     section={section}
     workActive={work}
-    // children={body}
+    children={body}
     homeGallery={homeGallery}
   />,
   document.getElementById('app')
-  /* eslint-enable no-undef */
+  /* eslint-enable */
 );

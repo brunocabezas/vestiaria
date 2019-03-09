@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './modal.css';
+import './modal.styl';
 
 const propTypes = {
   handleClose: PropTypes.func.isRequired,
@@ -16,11 +16,14 @@ const Modal = ({ handleClose, show, children }) => {
 
   return (
     <div className={showHideClassName}>
-      <section className="modal-main">
+      <section className="modal__main">
         {children}
-        <button type="button" title="Close" onClick={handleClose}>
-          close
-        </button>
+        <button
+          type="button"
+          title="Close"
+          className="close"
+          onClick={handleClose}
+        />
       </section>
     </div>
   );

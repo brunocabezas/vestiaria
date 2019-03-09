@@ -12,38 +12,47 @@ Application built with:
 ## Next steps
 
 - [ ] Remove `public/styles` folder
-
-## Available tasks
-
-The app has the following npm tasks defined:
-
-```
-start -› builds react app and start keystone development env
-build -› builds react app and start keystone on port 80
-start:react -› starts react app in dev env with parcel
-build:react -› builds react app with parcel to public/js
-lint:react -› lints react app
-```
+- [ ] Fix fonts route on for client
 
 ## Development
 
-### Frontend
+### Available tasks
 
-Client
+Main npm tasks defined (there are some pre-hooks used):
 
-### Backend
+```
+start -› builds react app, copies it to public/ and starts keystone dev server
+build -› builds react app, copies it to public/ and start keystone on port 80
+start:react -› starts react app in dev env with parcel
+build:react -› builds react app with parcel to client/dist
+lint:react -› lints react app
+```
 
-KeystoneJS serve a backend bla bla bla.
-
-#### Installing dependencies
+### Installing dependencies
 
 ```
 npm install
 ```
 
-#### Running keystone server
+### Frontend
 
-Different services are used and they require a bit of setup. Using an `.env` file is recommended, there you define:
+React is used to compose the UI, the app is on `client/` folder.
+
+For development it uses mocks and its own `client/index.html` entry point that mimics `templates/views/layouts/default.hbs` structure (used on production). To start the app on development, run:
+
+```
+npm start:react
+```
+
+### Backend
+
+Type the following to run KeystoneJS backend server:
+
+```
+npm start
+```
+
+Its important to mention that **different services are used and they require a bit of setup**. Using an `.env` file is recommended, there you define:
 
 - `CLOUDINARY_USER` Cloudinary hosts images, which is why a [cloudinary token](https://cloudinary.com/documentation/image_upload_api_reference) is needed
 - `COOKIE_SECRET` Random string to [add security](https://keystonejs.netlify.com/getting-started/setting-up/part-1/)

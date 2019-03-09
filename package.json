@@ -3,11 +3,13 @@
 	"version": "0.5.0",
 	"private": true,
 	"scripts": {
-		"lint": "esw -w --fix ./client",
 		"lint:react": "node_modules/eslint/bin/eslint.js client/",
-		"start": "npm run build:react && node keystone.js && lint",
+		"prestart": "npm run build:react && npm run clean:client && cp -R client/dist/ public/client/",
+		"start": "node keystone.js",
 		"start:react": "./node_modules/parcel-bundler/bin/cli.js ./client/index.html",
-		"build:react": "parcel build client/src/VestiariaApp.js -d public/js",
+		"build:react": "rm -rf client/dist && parcel build client/src/VestiariaApp.js -d client/dist",
+		"clean:client": "rm -rf public/client/",
+		"prebuild": "npm run build:react && npm run clean:client && cp -R client/dist public/client",
 		"build": "PORT=80 node keystone.js"
 	},
 	"dependencies": {

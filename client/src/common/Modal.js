@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import useEscapeKey from '@daniel.husar/use-escape-key';
 import './modal.styl';
 
 const propTypes = {
@@ -11,8 +12,17 @@ const propTypes = {
   ]).isRequired
 };
 
-const Modal = ({ handleClose, show, children }) => {
+function Modal({ handleClose, show, children }) {
   const showHideClassName = show ? 'modal display-block' : 'modal display-none';
+  useEscapeKey(
+    () => {
+      if (show) {
+        handleClose();
+        console.log('useEscapeKey()');
+      }
+    },
+    { dependencies: [show] }
+  );
 
   return (
     <div className={showHideClassName}>
@@ -27,7 +37,7 @@ const Modal = ({ handleClose, show, children }) => {
       </section>
     </div>
   );
-};
+}
 
 Modal.propTypes = propTypes;
 export default Modal;

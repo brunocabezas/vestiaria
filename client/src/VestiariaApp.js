@@ -29,6 +29,7 @@ function VestiariaApp(props) {
   const [showModal, setShowModal] = useState(false);
 
   function toggleModal() {
+    console.log('toggleModal', showModal);
     setShowModal(!showModal);
   }
 

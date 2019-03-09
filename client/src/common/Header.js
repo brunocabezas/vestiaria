@@ -1,8 +1,7 @@
-import React from "react";
-import { render } from "react-dom";
-import PropTypes from "prop-types";
-import * as props from "../VestiariaApp.props";
-import { navLinks } from "../VestiariaApp.static";
+import React from 'react';
+import PropTypes from 'prop-types';
+import * as props from '../VestiariaApp.props';
+import { navLinks } from '../VestiariaApp.static';
 
 const propTypes = {
   links: PropTypes.arrayOf(
@@ -18,22 +17,22 @@ const propTypes = {
 
 const defaultProps = {
   links: navLinks,
-  active: "home"
+  active: 'home'
 };
 
 const Header = ({ links, active, toggleWorks }) => {
   return (
     <div className="app__header">
       <ul className="app__header-nav header__menu child vertical">
-        {links.map((link, i) => {
-          const className = link.key === active ? "active" : "";
+        {links.map(link => {
+          const className = link.key === active ? 'active' : '';
           return (
-            <li className="app__header-link" key={i + link.label}>
-              {link.label === "Work" ? (
+            <li className="app__header-link" key={link.label}>
+              {link.label === 'Work' ? (
                 <a
                   data-featherlight="#mylightbox"
                   title="Show reel"
-									href="#works"
+                  href="#works"
                   onClick={toggleWorks}
                 >
                   work

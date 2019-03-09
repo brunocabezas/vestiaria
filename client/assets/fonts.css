@@ -1,18 +1,22 @@
 @font-face {
   font-family: Roboto;
   font-style: normal;
-  src: url("Roboto-Regular.ttf");
+  src: url('Roboto-Regular.ttf');
 }
 @font-face {
   font-family: Roboto-Bold;
   font-style: normal;
-  src: url("Roboto-Bold.ttf");
+  src: url('Roboto-Bold.ttf');
 }
 @font-face {
   font-family: Roboto-Thin;
   font-style: normal;
-  src: url("Roboto-Thin.ttf");
+  src: url('Roboto-Thin.ttf');
 }
+
 * {
-  font-family: Roboto;
+  font-family: Roboto, Frutiger, 'Frutiger Linotype', Univers, Calibri,
+    'Gill Sans', 'Gill Sans MT', 'Myriad Pro', Myriad, 'DejaVu Sans Condensed',
+    'Liberation Sans', 'Nimbus Sans L', Tahoma, Geneva, 'Helvetica Neue',
+    Helvetica, Arial, sans-serif;
 }

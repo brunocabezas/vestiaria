@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import { render } from "react-dom";
-import superagent from "superagent";
-import PropTypes from "prop-types";
+/* eslint-disable */
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
       _id: PropTypes.string,
-      format: PropTypes.oneOf(["png", "jpg"]),
+      format: PropTypes.oneOf(['png', 'jpg']),
       height: PropTypes.number,
       width: PropTypes.number,
       secure_url: PropTypes.string,
@@ -29,7 +28,7 @@ function Gallery(props) {
   const currentImageUrl =
     images && images[currentImage] && images[currentImage].url;
   const style = {
-    backgroundImage: "url(" + currentImageUrl + ")"
+    backgroundImage: `url(${currentImageUrl})`
   };
   return (
     <div className="gallery">

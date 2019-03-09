@@ -1,4 +1,3 @@
 {
     "extends": "keystone",
-    "excludedFiles": [ "client/*.js" ]
 }

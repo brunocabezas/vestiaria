@@ -1,211 +1,239 @@
 <html>
-	<head>
-		<!-- Used for development for now -->
-		<link href="../public/styles/site.css" rel="stylesheet">
-		<link href="./assets/fonts.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css" rel="stylesheet">
-	</head>
-	<body>
-		<div id="app"></div>
-		<script href="./assets/featherlight.min.js" type="text/javascript"></script>
-		<script type="text/javascript">
-			var body = '';
-			var gallery = '';
-			// about | home | contact
-			var section = "home";
-			var workActive = "";
-			var children = null;
-			var work = '';
-			var homeGallery = [];
-			var works = [
-			  {
-			    "_id": "5970133992bc3b736a90ea2d",
-			    "slug": "vimeo",
-			    "name": "vimeo",
-			    "__v": 0,
-			    "abstract": "vime mivmai sfas dfads fasdf adsf asdf asd ",
-			    "video": "https://vimeo.com/199623840",
-			    "gallery": [],
-			    "date": "2017-07-20T02:19:37.000Z",
-			    "heroImage": {
-			      "public_id": "twwxlbekq3tvlvpe0pib",
-			      "version": 1500517210,
-			      "signature": "37e7d233935e2366df2d4976ade28ff90cc4eda8",
-			      "width": 426,
-			      "height": 640,
-			      "format": "png",
-			      "resource_type": "image",
-			      "url": "http://res.cloudinary.com/keystone-demo/image/upload/v1500517210/twwxlbekq3tvlvpe0pib.png",
-			      "secure_url": "https://res.cloudinary.com/keystone-demo/image/upload/v1500517210/twwxlbekq3tvlvpe0pib.png"
-			    }
-			  },
-			  {
-			    "_id": "5929cb2880d5412283d80160",
-			    "slug": "traaajo-1",
-			    "name": "Traaajo 1",
-			    "publishedDate": "2017-05-27T18:53:28.000Z",
-			    "__v": 0,
-			    "abstract": " asdEs  n trabajo beno, me gstan las cosas benas s  dsf fdsf  sdf sfd sdf sdf sfd dasf sdf",
-			    "video": "https://www.youtube.com/watch?v=FWBfFkJvo5A",
-			    "gallery": [],
-			    "date": "2017-05-27T18:53:28.000Z",
-			    "heroImage": {
-			      "public_id": "tdccqelra01wat0zmqc6",
-			      "version": 1495928854,
-			      "signature": "e8970b69b86c0201c79e2a977667b25286588c81",
-			      "width": 599,
-			      "height": 380,
-			      "format": "jpg",
-			      "resource_type": "image",
-			      "url": "http://res.cloudinary.com/keystone-demo/image/upload/v1495928854/tdccqelra01wat0zmqc6.jpg",
-			      "secure_url": "https://res.cloudinary.com/keystone-demo/image/upload/v1495928854/tdccqelra01wat0zmqc6.jpg"
-			    }
-			  },
-			  {
-			    "_id": "592a101d5e88aa2e97de24e9",
-			    "slug": "trbajao-2",
-			    "name": "trbajao 2",
-			    "publishedDate": "2017-05-27T23:47:41.000Z",
-			    "__v": 1,
-			    "abstract": "1231231",
-			    "video": "https://vimeo.com/199623840",
-			    "gallery": [
-			      {
-			        "public_id": "haonedeqocff2ke8bgea",
-			        "version": 1496518069,
-			        "signature": "08e08899b67b32c107e172b9aedbe500306d25f6",
-			        "width": 563,
-			        "height": 550,
-			        "format": "jpg",
-			        "resource_type": "image",
-			        "url": "http://res.cloudinary.com/keystone-demo/image/upload/v1496518069/haonedeqocff2ke8bgea.jpg",
-			        "secure_url": "https://res.cloudinary.com/keystone-demo/image/upload/v1496518069/haonedeqocff2ke8bgea.jpg",
-			        "_id": "59330db9f01e5d26e866fa58"
-			      },
-			      {
-			        "public_id": "afr1lbxxrvfdw9f4n8yf",
-			        "version": 1496518069,
-			        "signature": "b03fba360969f37bef2c11350c389fefb0ca6afd",
-			        "width": 231,
-			        "height": 583,
-			        "format": "png",
-			        "resource_type": "image",
-			        "url": "http://res.cloudinary.com/keystone-demo/image/upload/v1496518069/afr1lbxxrvfdw9f4n8yf.png",
-			        "secure_url": "https://res.cloudinary.com/keystone-demo/image/upload/v1496518069/afr1lbxxrvfdw9f4n8yf.png",
-			        "_id": "59330db9f01e5d26e866fa57"
-			      },
-			      {
-			        "public_id": "yc9nmz4qaptxsejeqs6q",
-			        "version": 1496518071,
-			        "signature": "3f3d3c3a47a89020e9bfd8c69a290ba89520a5f9",
-			        "width": 1536,
-			        "height": 2048,
-			        "format": "jpg",
-			        "resource_type": "image",
-			        "url": "http://res.cloudinary.com/keystone-demo/image/upload/v1496518071/yc9nmz4qaptxsejeqs6q.jpg",
-			        "secure_url": "https://res.cloudinary.com/keystone-demo/image/upload/v1496518071/yc9nmz4qaptxsejeqs6q.jpg",
-			        "_id": "59330db9f01e5d26e866fa56"
-			      },
-			      {
-			        "public_id": "wr7gc4aodjvbkoqlhpv5",
-			        "version": 1496518069,
-			        "signature": "e7eaffaa81512c4acfd7e7eb63f683a312f1ad8e",
-			        "width": 1024,
-			        "height": 768,
-			        "format": "jpg",
-			        "resource_type": "image",
-			        "url": "http://res.cloudinary.com/keystone-demo/image/upload/v1496518069/wr7gc4aodjvbkoqlhpv5.jpg",
-			        "secure_url": "https://res.cloudinary.com/keystone-demo/image/upload/v1496518069/wr7gc4aodjvbkoqlhpv5.jpg",
-			        "_id": "59330db9f01e5d26e866fa55"
-			      },
-			      {
-			        "public_id": "c5oib2luxwl5nkc3omzj",
-			        "version": 1496518071,
-			        "signature": "c3816b2e27fb0fd61328f0b6665854ea5e427ce0",
-			        "width": 709,
-			        "height": 613,
-			        "format": "png",
-			        "resource_type": "image",
-			        "url": "http://res.cloudinary.com/keystone-demo/image/upload/v1496518071/c5oib2luxwl5nkc3omzj.png",
-			        "secure_url": "https://res.cloudinary.com/keystone-demo/image/upload/v1496518071/c5oib2luxwl5nkc3omzj.png",
-			        "_id": "59330db9f01e5d26e866fa54"
-			      },
-			      {
-			        "public_id": "rgfmi9oajkxt2iv9cabx",
-			        "version": 1496518070,
-			        "signature": "b0cfc8cee58009d4242f166136725269f65c3fba",
-			        "width": 426,
-			        "height": 640,
-			        "format": "png",
-			        "resource_type": "image",
-			        "url": "http://res.cloudinary.com/keystone-demo/image/upload/v1496518070/rgfmi9oajkxt2iv9cabx.png",
-			        "secure_url": "https://res.cloudinary.com/keystone-demo/image/upload/v1496518070/rgfmi9oajkxt2iv9cabx.png",
-			        "_id": "59330db9f01e5d26e866fa53"
-			      },
-			      {
-			        "public_id": "zi3vlvc7x7lxnjmwtx8m",
-			        "version": 1496518070,
-			        "signature": "3db92cbfc79c74afe779db3afee7b23898b1e417",
-			        "width": 460,
-			        "height": 571,
-			        "format": "png",
-			        "resource_type": "image",
-			        "url": "http://res.cloudinary.com/keystone-demo/image/upload/v1496518070/zi3vlvc7x7lxnjmwtx8m.png",
-			        "secure_url": "https://res.cloudinary.com/keystone-demo/image/upload/v1496518070/zi3vlvc7x7lxnjmwtx8m.png",
-			        "_id": "59330db9f01e5d26e866fa52"
-			      },
-			      {
-			        "public_id": "vpmuyrhlwxlgxj5wbwq9",
-			        "version": 1496518070,
-			        "signature": "c9bbea068136d2536d40a16e26e1e669b37e7902",
-			        "width": 348,
-			        "height": 614,
-			        "format": "png",
-			        "resource_type": "image",
-			        "url": "http://res.cloudinary.com/keystone-demo/image/upload/v1496518070/vpmuyrhlwxlgxj5wbwq9.png",
-			        "secure_url": "https://res.cloudinary.com/keystone-demo/image/upload/v1496518070/vpmuyrhlwxlgxj5wbwq9.png",
-			        "_id": "59330db9f01e5d26e866fa51"
-			      },
-			      {
-			        "public_id": "egjnhbuitei3eckw0fob",
-			        "version": 1496518069,
-			        "signature": "0908bb919543c112c08393a4bf011b083ab07f6f",
-			        "width": 385,
-			        "height": 578,
-			        "format": "jpg",
-			        "resource_type": "image",
-			        "url": "http://res.cloudinary.com/keystone-demo/image/upload/v1496518069/egjnhbuitei3eckw0fob.jpg",
-			        "secure_url": "https://res.cloudinary.com/keystone-demo/image/upload/v1496518069/egjnhbuitei3eckw0fob.jpg",
-			        "_id": "59330db9f01e5d26e866fa50"
-			      },
-			      {
-			        "public_id": "xbokc0fagdauynuwzjjt",
-			        "version": 1496518069,
-			        "signature": "f6b6deffadf6dd3cd3f9376e423642a67585e659",
-			        "width": 256,
-			        "height": 578,
-			        "format": "png",
-			        "resource_type": "image",
-			        "url": "http://res.cloudinary.com/keystone-demo/image/upload/v1496518069/xbokc0fagdauynuwzjjt.png",
-			        "secure_url": "https://res.cloudinary.com/keystone-demo/image/upload/v1496518069/xbokc0fagdauynuwzjjt.png",
-			        "_id": "59330db9f01e5d26e866fa4f"
-			      }
-			    ],
-			    "date": "2017-05-27T23:47:41.000Z",
-			    "heroImage": {
-			      "public_id": "z2spyt3nyjve2pqgx7b8",
-			      "version": 1500517164,
-			      "signature": "ef817127bea1d4a417c02a01cb071b84fca865bf",
-			      "width": 231,
-			      "height": 583,
-			      "format": "png",
-			      "resource_type": "image",
-			      "url": "http://res.cloudinary.com/keystone-demo/image/upload/v1500517164/z2spyt3nyjve2pqgx7b8.png",
-			      "secure_url": "https://res.cloudinary.com/keystone-demo/image/upload/v1500517164/z2spyt3nyjve2pqgx7b8.png"
-			    }
-			  }
-			];
-		</script>
-	  <script src="./src/VestiariaApp.js"></script>
-	</body>
+  <head>
+    <!-- Used for development for now -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script href="./assets/featherlight.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var body = '';
+      var gallery = '';
+      // about | home | contact
+      var section = 'home';
+      var workActive = '';
+      var children = null;
+      var work = '';
+      var homeGallery = [];
+      var works = [
+        {
+          _id: '5970133992bc3b736a90ea2d',
+          slug: 'vimeo',
+          name: 'vimeo',
+          __v: 0,
+          abstract: 'vime mivmai sfas dfads fasdf adsf asdf asd ',
+          video: 'https://vimeo.com/199623840',
+          gallery: [],
+          date: '2017-07-20T02:19:37.000Z',
+          heroImage: {
+            public_id: 'twwxlbekq3tvlvpe0pib',
+            version: 1500517210,
+            signature: '37e7d233935e2366df2d4976ade28ff90cc4eda8',
+            width: 426,
+            height: 640,
+            format: 'png',
+            resource_type: 'image',
+            url:
+              'http://res.cloudinary.com/keystone-demo/image/upload/v1500517210/twwxlbekq3tvlvpe0pib.png',
+            secure_url:
+              'https://res.cloudinary.com/keystone-demo/image/upload/v1500517210/twwxlbekq3tvlvpe0pib.png'
+          }
+        },
+        {
+          _id: '5929cb2880d5412283d80160',
+          slug: 'traaajo-1',
+          name: 'Traaajo 1',
+          publishedDate: '2017-05-27T18:53:28.000Z',
+          __v: 0,
+          abstract:
+            ' asdEs  n trabajo beno, me gstan las cosas benas s  dsf fdsf  sdf sfd sdf sdf sfd dasf sdf',
+          video: 'https://www.youtube.com/watch?v=FWBfFkJvo5A',
+          gallery: [],
+          date: '2017-05-27T18:53:28.000Z',
+          heroImage: {
+            public_id: 'tdccqelra01wat0zmqc6',
+            version: 1495928854,
+            signature: 'e8970b69b86c0201c79e2a977667b25286588c81',
+            width: 599,
+            height: 380,
+            format: 'jpg',
+            resource_type: 'image',
+            url:
+              'http://res.cloudinary.com/keystone-demo/image/upload/v1495928854/tdccqelra01wat0zmqc6.jpg',
+            secure_url:
+              'https://res.cloudinary.com/keystone-demo/image/upload/v1495928854/tdccqelra01wat0zmqc6.jpg'
+          }
+        },
+        {
+          _id: '592a101d5e88aa2e97de24e9',
+          slug: 'trbajao-2',
+          name: 'trbajao 2',
+          publishedDate: '2017-05-27T23:47:41.000Z',
+          __v: 1,
+          abstract: '1231231',
+          video: 'https://vimeo.com/199623840',
+          gallery: [
+            {
+              public_id: 'haonedeqocff2ke8bgea',
+              version: 1496518069,
+              signature: '08e08899b67b32c107e172b9aedbe500306d25f6',
+              width: 563,
+              height: 550,
+              format: 'jpg',
+              resource_type: 'image',
+              url:
+                'http://res.cloudinary.com/keystone-demo/image/upload/v1496518069/haonedeqocff2ke8bgea.jpg',
+              secure_url:
+                'https://res.cloudinary.com/keystone-demo/image/upload/v1496518069/haonedeqocff2ke8bgea.jpg',
+              _id: '59330db9f01e5d26e866fa58'
+            },
+            {
+              public_id: 'afr1lbxxrvfdw9f4n8yf',
+              version: 1496518069,
+              signature: 'b03fba360969f37bef2c11350c389fefb0ca6afd',
+              width: 231,
+              height: 583,
+              format: 'png',
+              resource_type: 'image',
+              url:
+                'http://res.cloudinary.com/keystone-demo/image/upload/v1496518069/afr1lbxxrvfdw9f4n8yf.png',
+              secure_url:
+                'https://res.cloudinary.com/keystone-demo/image/upload/v1496518069/afr1lbxxrvfdw9f4n8yf.png',
+              _id: '59330db9f01e5d26e866fa57'
+            },
+            {
+              public_id: 'yc9nmz4qaptxsejeqs6q',
+              version: 1496518071,
+              signature: '3f3d3c3a47a89020e9bfd8c69a290ba89520a5f9',
+              width: 1536,
+              height: 2048,
+              format: 'jpg',
+              resource_type: 'image',
+              url:
+                'http://res.cloudinary.com/keystone-demo/image/upload/v1496518071/yc9nmz4qaptxsejeqs6q.jpg',
+              secure_url:
+                'https://res.cloudinary.com/keystone-demo/image/upload/v1496518071/yc9nmz4qaptxsejeqs6q.jpg',
+              _id: '59330db9f01e5d26e866fa56'
+            },
+            {
+              public_id: 'wr7gc4aodjvbkoqlhpv5',
+              version: 1496518069,
+              signature: 'e7eaffaa81512c4acfd7e7eb63f683a312f1ad8e',
+              width: 1024,
+              height: 768,
+              format: 'jpg',
+              resource_type: 'image',
+              url:
+                'http://res.cloudinary.com/keystone-demo/image/upload/v1496518069/wr7gc4aodjvbkoqlhpv5.jpg',
+              secure_url:
+                'https://res.cloudinary.com/keystone-demo/image/upload/v1496518069/wr7gc4aodjvbkoqlhpv5.jpg',
+              _id: '59330db9f01e5d26e866fa55'
+            },
+            {
+              public_id: 'c5oib2luxwl5nkc3omzj',
+              version: 1496518071,
+              signature: 'c3816b2e27fb0fd61328f0b6665854ea5e427ce0',
+              width: 709,
+              height: 613,
+              format: 'png',
+              resource_type: 'image',
+              url:
+                'http://res.cloudinary.com/keystone-demo/image/upload/v1496518071/c5oib2luxwl5nkc3omzj.png',
+              secure_url:
+                'https://res.cloudinary.com/keystone-demo/image/upload/v1496518071/c5oib2luxwl5nkc3omzj.png',
+              _id: '59330db9f01e5d26e866fa54'
+            },
+            {
+              public_id: 'rgfmi9oajkxt2iv9cabx',
+              version: 1496518070,
+              signature: 'b0cfc8cee58009d4242f166136725269f65c3fba',
+              width: 426,
+              height: 640,
+              format: 'png',
+              resource_type: 'image',
+              url:
+                'http://res.cloudinary.com/keystone-demo/image/upload/v1496518070/rgfmi9oajkxt2iv9cabx.png',
+              secure_url:
+                'https://res.cloudinary.com/keystone-demo/image/upload/v1496518070/rgfmi9oajkxt2iv9cabx.png',
+              _id: '59330db9f01e5d26e866fa53'
+            },
+            {
+              public_id: 'zi3vlvc7x7lxnjmwtx8m',
+              version: 1496518070,
+              signature: '3db92cbfc79c74afe779db3afee7b23898b1e417',
+              width: 460,
+              height: 571,
+              format: 'png',
+              resource_type: 'image',
+              url:
+                'http://res.cloudinary.com/keystone-demo/image/upload/v1496518070/zi3vlvc7x7lxnjmwtx8m.png',
+              secure_url:
+                'https://res.cloudinary.com/keystone-demo/image/upload/v1496518070/zi3vlvc7x7lxnjmwtx8m.png',
+              _id: '59330db9f01e5d26e866fa52'
+            },
+            {
+              public_id: 'vpmuyrhlwxlgxj5wbwq9',
+              version: 1496518070,
+              signature: 'c9bbea068136d2536d40a16e26e1e669b37e7902',
+              width: 348,
+              height: 614,
+              format: 'png',
+              resource_type: 'image',
+              url:
+                'http://res.cloudinary.com/keystone-demo/image/upload/v1496518070/vpmuyrhlwxlgxj5wbwq9.png',
+              secure_url:
+                'https://res.cloudinary.com/keystone-demo/image/upload/v1496518070/vpmuyrhlwxlgxj5wbwq9.png',
+              _id: '59330db9f01e5d26e866fa51'
+            },
+            {
+              public_id: 'egjnhbuitei3eckw0fob',
+              version: 1496518069,
+              signature: '0908bb919543c112c08393a4bf011b083ab07f6f',
+              width: 385,
+              height: 578,
+              format: 'jpg',
+              resource_type: 'image',
+              url:
+                'http://res.cloudinary.com/keystone-demo/image/upload/v1496518069/egjnhbuitei3eckw0fob.jpg',
+              secure_url:
+                'https://res.cloudinary.com/keystone-demo/image/upload/v1496518069/egjnhbuitei3eckw0fob.jpg',
+              _id: '59330db9f01e5d26e866fa50'
+            },
+            {
+              public_id: 'xbokc0fagdauynuwzjjt',
+              version: 1496518069,
+              signature: 'f6b6deffadf6dd3cd3f9376e423642a67585e659',
+              width: 256,
+              height: 578,
+              format: 'png',
+              resource_type: 'image',
+              url:
+                'http://res.cloudinary.com/keystone-demo/image/upload/v1496518069/xbokc0fagdauynuwzjjt.png',
+              secure_url:
+                'https://res.cloudinary.com/keystone-demo/image/upload/v1496518069/xbokc0fagdauynuwzjjt.png',
+              _id: '59330db9f01e5d26e866fa4f'
+            }
+          ],
+          date: '2017-05-27T23:47:41.000Z',
+          heroImage: {
+            public_id: 'z2spyt3nyjve2pqgx7b8',
+            version: 1500517164,
+            signature: 'ef817127bea1d4a417c02a01cb071b84fca865bf',
+            width: 231,
+            height: 583,
+            format: 'png',
+            resource_type: 'image',
+            url:
+              'http://res.cloudinary.com/keystone-demo/image/upload/v1500517164/z2spyt3nyjve2pqgx7b8.png',
+            secure_url:
+              'https://res.cloudinary.com/keystone-demo/image/upload/v1500517164/z2spyt3nyjve2pqgx7b8.png'
+          }
+        }
+      ];
+    </script>
+    <script src="./src/VestiariaApp.js"></script>
+  </body>
 </html>

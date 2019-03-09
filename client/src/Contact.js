@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Contact = () => {
   return (
@@ -12,6 +12,7 @@ const Contact = () => {
       <div>
         <a
           className="instagram"
+          rel="noreferrer noopener"
           target="_blank"
           href="https://www.instagram.com/cluda.roblins"
         >

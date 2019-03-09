@@ -1,59 +1,66 @@
-import React from "react";
-import Header from "./common/Header";
-import Home from "./Home";
-import WorksOverlay from "./common/WorksOverlay";
-import Work from "./Work";
-import About from "./About";
-import * as props from "./VestiariaApp.props";
-import Contact from "./Contact";
-import PropTypes from "prop-types";
-import { render } from "react-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { render } from 'react-dom';
+import Header from './common/Header';
+import Home from './Home';
+import WorksGrid from './common/WorksGrid';
+import Modal from './common/Modal';
+import Work from './Work';
+import About from './About';
+import * as p from './VestiariaApp.props';
+import Contact from './Contact';
+import '../assets/site.css';
+import '../assets/fonts.css';
 
 const propTypes = {
-  section: props.sections.isRequired,
-  works: PropTypes.array,
-  homeGallery: PropTypes.array,
+  section: p.sections.isRequired,
+  // works: PropTypes.array.isRequired,
+  // homeGallery: PropTypes.array.isRequired,
   // slug of work route
-  workActive: PropTypes.string
+  workActive: PropTypes.string.isRequired
 };
-
-const defaultProps = {
-  works: []
-};
+//
+// const defaultProps = {
+//   works: []
+// };
 
 class VestiariaApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       // not used right now
-      workGalleryOpen: false
+      // workGalleryOpen: false,
+      showModal: false
     };
     this.toggleGallery = this.toggleGallery.bind(this);
   }
 
   toggleGallery() {
-    this.setState({ workGalleryOpen: !this.state.workGalleryOpen });
+    this.setState(prevState => ({ showModal: !prevState.showModal }));
   }
 
   render() {
-    const { section, works, workActive } = this.props;
+    const { section, workActive } = this.props;
+    const { showModal, workGalleryOpen } = this.props;
     let content;
     // console.log(section);
-    if (section === "home") content = <Home />;
-    else if (section === "about") content = <About />;
-    else if (section === "contact") content = <Contact />;
-    else if (section === "work") content = <Work slug={workActive} />;
+    if (section === 'home') content = <Home />;
+    else if (section === 'about') content = <About />;
+    else if (section === 'contact') content = <Contact />;
+    else if (section === 'work') content = <Work slug={workActive} />;
     else content = null;
 
-    console.log(this.state.workGalleryOpen);
+    console.log(showModal);
     return (
       <div className="app">
         <Header
           active={section}
-          worksActive={this.state.workGalleryOpen}
+          worksActive={workGalleryOpen}
           toggleWorks={this.toggleGallery}
         />
-        <WorksOverlay />
+        <Modal show={showModal} handleClose={this.toggleGallery}>
+          <WorksGrid />
+        </Modal>
         <div className="app__container" id="app__container">
           {content}
         </div>
@@ -62,16 +69,18 @@ class VestiariaApp extends React.Component {
   }
 }
 
-VestiariaApp.defaultProps = defaultProps;
+// VestiariaApp.defaultProps = defaultProps;
 VestiariaApp.propTypes = propTypes;
 
+/* eslint-disable no-undef */
 render(
   <VestiariaApp
     works={works}
     section={section}
     workActive={work}
-    children={body}
+    // children={body}
     homeGallery={homeGallery}
   />,
-  document.getElementById("app")
+  document.getElementById('app')
+  /* eslint-enable no-undef */
 );

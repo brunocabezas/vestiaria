@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { render } from "react-dom";
-import superagent from "superagent";
-import Gallery from "./common/Gallery";
-import galleryMock from "../mocks/home-gallery-get-response.json";
-import PropTypes from "prop-types";
+import React, { useState, useEffect } from 'react';
+import superagent from 'superagent';
+import Gallery from './common/Gallery';
+import galleryMock from '../mocks/home-gallery-get-response.json';
+import './home.styl';
 
 function Home() {
   const [images, setImages] = useState([]);
@@ -11,7 +10,7 @@ function Home() {
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     // Fetching data from API
-    superagent.get("/api/home_gallery").end(function(err, res) {
+    superagent.get('/api/home_gallery').end(function(err, res) {
       if (!err && res.ok && res.body && res.body.data) {
         setImages(galleryMock.data.images);
       }

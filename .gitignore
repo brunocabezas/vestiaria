@@ -32,3 +32,11 @@ node_modules
 
 # Data folder with mongo db
 data/
+
+# Parcel JS builds
+.cache
+client/dist
+dist
+
+# Parcel JS build on public folder
+public/client

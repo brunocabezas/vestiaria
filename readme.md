@@ -1,37 +1,72 @@
 # Vestiaria Portfolio site
 
-Site hosted on claudiarobles.com  
+Site hosted on [claudiarobles.com](http://claudiarobles.com)
 
-## Table of Contents
+Application built with:
 
-- [Development](#development)
-- [Usage](#usage)
-- [Support](#support)
+- [KeystoneJS](https://github.com/keystonejs/keystone) - Node.js content management system.
+- [ReactJS](https://reactjs.org/) - To compose the UI.
+- [Jeet](http://jeet.gs/) - A grid system for humans.
+- [Stylus](http://stylus-lang.com/) - CSS Framework.
+
+## Next steps
+
+- [ ] Remove `public/styles` folder
+- [ ] Fix fonts route on for client
+- [ ] Media query and mobile on work grid
+- [ ] Modify app title
 
 ## Development
 
-To start KeystoneJS, please run:
+### Available tasks
+
+Main npm tasks defined (there are some pre-hooks used):
+
+```
+start -› builds react app, copies it to public/ and starts keystone dev server
+build -› builds react app, copies it to public/ and start keystone on port 80
+start:react -› starts react app in dev env with parcel
+build:react -› builds react app with parcel to client/dist
+lint:react -› lints react app
+```
+
+### Installing dependencies
+
+```
+npm install
+```
+
+### Frontend
+
+React is used to compose the UI, the app is on `client/` folder.
+
+For development it uses mocks and its own `client/index.html` entry point that mimics `templates/views/layouts/default.hbs` structure (used on production). To start the app on development, run:
+
+```
+npm start:react
+```
+
+### Backend
+
+Type the following to run KeystoneJS backend server:
 
 ```
 npm start
 ```
+
+Its important to mention that **different services are used and they require a bit of setup**. Using an `.env` file is recommended, there you define:
+
+- `CLOUDINARY_USER` Cloudinary hosts images, which is why a [cloudinary token](https://cloudinary.com/documentation/image_upload_api_reference) is needed
+- `COOKIE_SECRET` Random string to [add security](https://keystonejs.netlify.com/getting-started/setting-up/part-1/)
+- `MAILGUN_API_KEY` (optional)
+- `MAILGUN_DOMAIN` (optional)
+
+Also having a running [mongodb](https://docs.mongodb.com/) environment is required; keystone serve will connect trough port `27.017`.
+
 This will serve up the application at `localhost:3000`
 
-## Usage
+#### Templates and Client
 
-### npm tasks
-The app has the following npm tasks defined:
+KeystoneJS allow us to render backend data using Handlebars. Use of this template system must be limited to almost none, just enough to run the javascript app on `client/`.
 
-```
-start -› start the application on dev env.
-start:prod -› start the application on with PORT=80 as env variable
-eslint -› runs the linter
-```
-
-## Support
-
-Application built with:
-  * [KeystoneJS](https://github.com/keystonejs/keystone) - Node.js content management system.
-  * [Jeet](http://jeet.gs/) - A grid system for humans.
-  * [Stylus](http://stylus-lang.com/) - CSS Framework.
-  * [featherLight](https://noelboss.github.io/featherlight/) - Very lightweight jQuery lightbox.
+The one and only `layouts/default.hbs` declares the basic to start a react-app plus some variables needed for this to work.

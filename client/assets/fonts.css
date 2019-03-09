@@ -1,0 +1,46 @@
+/* @font-face {
+  font-family: Roboto;
+  font-style: normal;
+  src: url('./°Roboto-Regular.ttf');
+}
+@font-face {
+  font-family: Roboto-Bold;
+  font-style: normal;
+  src: url('./°Roboto-Bold.ttf');
+}
+@font-face {
+  font-family: Roboto-Thin;
+  font-style: normal;
+  src: url('./°Roboto-Thin.ttf');
+} */
+
+* {
+  font-family: Roboto, Frutiger, 'Helvetica Neue', Helvetica,
+    'Frutiger Linotype', Univers, Calibri, 'Gill Sans', 'Gill Sans MT',
+    'Myriad Pro', Myriad, 'DejaVu Sans Condensed', 'Liberation Sans',
+    'Nimbus Sans L', Tahoma, Geneva, Arial, sans-serif;
+}
+
+@font-face {
+  font-family: Roboto-Bold;
+  src: url('./fonts/roboto-bold-webfont.woff2') format('woff2'),
+    url('./fonts/roboto-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url('./fonts/roboto-regular-webfont.woff2') format('woff2'),
+    url('./fonts/roboto-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto-Thin;
+  src: url('./fonts/roboto-thin-webfont.woff2') format('woff2'),
+    url('./fonts/roboto-thin-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

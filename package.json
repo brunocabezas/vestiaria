@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"lint": "esw -w --fix ./client",
+		"lint:react": "node_modules/eslint/bin/eslint.js client/",
 		"start": "npm run build:react && node keystone.js && lint",
 		"start:react": "./node_modules/parcel-bundler/bin/cli.js ./client/index.html",
 		"build:react": "parcel build client/src/VestiariaApp.js -d public/js",
@@ -23,6 +24,7 @@
 		"react": "^16.8.4",
 		"react-dom": "^16.8.4",
 		"react-shimmer": "^1.2.1",
+		"react-suspense-image-loader": "^1.0.19",
 		"stylelint-config-recommended": "^2.1.0",
 		"superagent": "^3.8.3"
 	},

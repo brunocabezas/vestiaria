@@ -8,7 +8,10 @@ Application built with:
 - [ReactJS](https://reactjs.org/) - To compose the UI.
 - [Jeet](http://jeet.gs/) - A grid system for humans.
 - [Stylus](http://stylus-lang.com/) - CSS Framework.
-- [featherLight](https://noelboss.github.io/featherlight/) - Lightweight jQuery lightbox.
+
+## Next steps
+
+- [ ] Remove `public/styles` folder
 
 ## Available tasks
 
@@ -19,22 +22,26 @@ start -› builds react app and start keystone development env
 build -› builds react app and start keystone on port 80
 start:react -› starts react app in dev env with parcel
 build:react -› builds react app with parcel to public/js
-lint -› lints react app
+lint:react -› lints react app
 ```
 
 ## Development
 
-### Structure
+### Frontend
 
-KeystoneJS is using handlebars for templates on the view layer, therefore, all routes should have a corresponding `.hbs` file. Each view is rendering
+Client
 
-### Installing dependencies
+### Backend
+
+KeystoneJS serve a backend bla bla bla.
+
+#### Installing dependencies
 
 ```
 npm install
 ```
 
-### Running keystone server
+#### Running keystone server
 
 Different services are used and they require a bit of setup. Using an `.env` file is recommended, there you define:
 
@@ -43,6 +50,12 @@ Different services are used and they require a bit of setup. Using an `.env` fil
 - `MAILGUN_API_KEY` (optional)
 - `MAILGUN_DOMAIN` (optional)
 
-Also having a running [mongodb](https://docs.mongodb.com/) environment is required; keystone serve will connect trough port 27017.
+Also having a running [mongodb](https://docs.mongodb.com/) environment is required; keystone serve will connect trough port `27.017`.
 
 This will serve up the application at `localhost:3000`
+
+#### Templates and Client
+
+KeystoneJS allow us to render backend data using Handlebars. Use of this template system must be limited to almost none, just enough to run the javascript app on `client/`.
+
+The one and only `layouts/default.hbs` declares the basic to start a react-app plus some variables needed for this to work.

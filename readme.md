@@ -13,6 +13,8 @@ Application built with:
 
 - [ ] Remove `public/styles` folder
 - [ ] Fix fonts route on for client
+- [ ] Media query and mobile on work grid
+- [ ] Modify app title
 
 ## Development
 

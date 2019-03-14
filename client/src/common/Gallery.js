@@ -35,9 +35,6 @@ function Gallery(props) {
       {images.length > 0 && (
         <div id="imageButton" onClick={changeImage} style={style} />
       )}
-      <div className="progress-bar">
-        <span className="progress-bar-fill" />
-      </div>
     </div>
   );
 }

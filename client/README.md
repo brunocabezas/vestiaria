@@ -1,11 +1,17 @@
-VestiariaApp
+# VestiariaApp
 
-React 16.8 app with hooks, bundled with parcel js
+Frontend app for KeystoneJS on www.claudiarobles.com. Build with React 16 and hooks.
 
-Devekopment
+## Development
 
-parcel serve
+When running the development server, mocks located on `.client/mocks/` are used by `superagent`.
 
-Build
+```
+npm start:react
+```
 
-parcel watch
+## Build
+
+```
+npm build:react
+```

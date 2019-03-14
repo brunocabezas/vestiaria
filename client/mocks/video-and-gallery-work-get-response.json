@@ -1,0 +1,97 @@
+{
+  "code": 200,
+  "data": {
+    "_id": "59519ce43aa29904de9a973e",
+    "slug": "detras-del-alma",
+    "name": "Detrás del Alma",
+    "__v": 3,
+    "abstract": "Video Electrodomésticos . Dirección de arte y de vestuario dirección de arte | Dirigido por  Pablo Larraín año 2013 locación Santiago",
+    "video": "https://www.youtube.com/watch?v=FWBfFkJvo5A",
+    "gallery": [
+      {
+        "public_id": "algkv53uoou44ijg6xft",
+        "version": 1501512125,
+        "signature": "1b7460cc4a1dfa633f9cbddf9e0f0a6bb67d9086",
+        "width": 1279,
+        "height": 426,
+        "format": "png",
+        "resource_type": "image",
+        "url": "http://res.cloudinary.com/vestiaria-cloud/image/upload/v1501512125/algkv53uoou44ijg6xft.png",
+        "secure_url": "https://res.cloudinary.com/vestiaria-cloud/image/upload/v1501512125/algkv53uoou44ijg6xft.png",
+        "_id": "597f41bfd625dd2dd64bab45"
+      },
+      {
+        "public_id": "sxi4lyepu0skkyce0wcs",
+        "version": 1501512125,
+        "signature": "e0e8dfdec8073e85d9649e46962c8222e827faf7",
+        "width": 1271,
+        "height": 423,
+        "format": "png",
+        "resource_type": "image",
+        "url": "http://res.cloudinary.com/vestiaria-cloud/image/upload/v1501512125/sxi4lyepu0skkyce0wcs.png",
+        "secure_url": "https://res.cloudinary.com/vestiaria-cloud/image/upload/v1501512125/sxi4lyepu0skkyce0wcs.png",
+        "_id": "597f41bfd625dd2dd64bab44"
+      },
+      {
+        "public_id": "khezbybzrz3pkfjmiwtz",
+        "version": 1501512125,
+        "signature": "eff2891bbb476fbb4fc362b2c597cc15e11941be",
+        "width": 1268,
+        "height": 431,
+        "format": "png",
+        "resource_type": "image",
+        "url": "http://res.cloudinary.com/vestiaria-cloud/image/upload/v1501512125/khezbybzrz3pkfjmiwtz.png",
+        "secure_url": "https://res.cloudinary.com/vestiaria-cloud/image/upload/v1501512125/khezbybzrz3pkfjmiwtz.png",
+        "_id": "597f41bfd625dd2dd64bab43"
+      },
+      {
+        "public_id": "l57ykcuqg8pdoytgkbsz",
+        "version": 1501512125,
+        "signature": "803d42c28e1c608b308899ba399b2b683cb82582",
+        "width": 1276,
+        "height": 425,
+        "format": "png",
+        "resource_type": "image",
+        "url": "http://res.cloudinary.com/vestiaria-cloud/image/upload/v1501512125/l57ykcuqg8pdoytgkbsz.png",
+        "secure_url": "https://res.cloudinary.com/vestiaria-cloud/image/upload/v1501512125/l57ykcuqg8pdoytgkbsz.png",
+        "_id": "597f41bfd625dd2dd64bab42"
+      },
+      {
+        "public_id": "dcjefzxl0xmo03wywf4b",
+        "version": 1501512125,
+        "signature": "bc5dec8f983a4f955afc695e52e069b0c4dc1503",
+        "width": 1267,
+        "height": 423,
+        "format": "png",
+        "resource_type": "image",
+        "url": "http://res.cloudinary.com/vestiaria-cloud/image/upload/v1501512125/dcjefzxl0xmo03wywf4b.png",
+        "secure_url": "https://res.cloudinary.com/vestiaria-cloud/image/upload/v1501512125/dcjefzxl0xmo03wywf4b.png",
+        "_id": "597f41bfd625dd2dd64bab41"
+      },
+      {
+        "public_id": "lufdrjsyiybujpixuuqt",
+        "version": 1501512125,
+        "signature": "841c0a50e6952c9c0b0a95a064295c12fe3b4e70",
+        "width": 1272,
+        "height": 422,
+        "format": "png",
+        "resource_type": "image",
+        "url": "http://res.cloudinary.com/vestiaria-cloud/image/upload/v1501512125/lufdrjsyiybujpixuuqt.png",
+        "secure_url": "https://res.cloudinary.com/vestiaria-cloud/image/upload/v1501512125/lufdrjsyiybujpixuuqt.png",
+        "_id": "597f41bfd625dd2dd64bab40"
+      }
+    ],
+    "date": "2017-06-26T23:46:44.000Z",
+    "heroImage": {
+      "public_id": "jo4syga0hrnwk44jnpfj",
+      "version": 1501512125,
+      "signature": "ff457d45828fb66548258e88fa12e04d09bb9e62",
+      "width": 1266,
+      "height": 424,
+      "format": "png",
+      "resource_type": "image",
+      "url": "http://res.cloudinary.com/vestiaria-cloud/image/upload/v1501512125/jo4syga0hrnwk44jnpfj.png",
+      "secure_url": "https://res.cloudinary.com/vestiaria-cloud/image/upload/v1501512125/jo4syga0hrnwk44jnpfj.png"
+    }
+  }
+}

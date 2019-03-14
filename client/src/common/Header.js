@@ -23,20 +23,15 @@ const defaultProps = {
 const Header = ({ links, active, toggleWorks }) => {
   return (
     <div className="app__header">
-      <ul className="app__header-nav header__menu child vertical">
+      <ul className="app__headerNav header__menu child vertical">
         {links.map(link => {
           const className = link.key === active ? 'active' : '';
           return (
-            <li className="app__header-link" key={link.label}>
+            <li className="app__headerLink" key={link.label}>
               {link.label === 'Work' ? (
-                <a
-                  data-featherlight="#mylightbox"
-                  title="Show reel"
-                  href="#works"
-                  onClick={toggleWorks}
-                >
+                <button type="button" title="Show reel" onClick={toggleWorks}>
                   work
-                </a>
+                </button>
               ) : (
                 <a className={className} title={link.label} href={link.href}>
                   {link.label}

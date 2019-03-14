@@ -18,7 +18,7 @@ function Modal({ handleClose, show, children }) {
     () => {
       if (show) {
         handleClose();
-        console.log('useEscapeKey()');
+        console.log('Modal#useEscapeKey()');
       }
     },
     { dependencies: [show] }

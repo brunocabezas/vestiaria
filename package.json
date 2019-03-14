@@ -20,6 +20,7 @@
 		"express-handlebars": "3.0.0",
 		"fonts.css": "^2.0.0",
 		"handlebars": "^4.1.0",
+		"history": "^4.7.2",
 		"keystone": "^4.0.0",
 		"keystone-email": "^1.1.0",
 		"prop-types": "^15.7.2",

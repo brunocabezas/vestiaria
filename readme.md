@@ -14,13 +14,17 @@ Application built with:
 - [ ] Remove `public/styles` folder
 - [ ] Fix fonts route on for client
 - [ ] Media query and mobile on work grid
-- [ ] Modify app title
+- [ ] Modify app title on sections
+- [ ] Url reactiing to changes
+- [ ] Change first picture
+- [ ] Preload home gallery photos
+- [ ] Compress photos on cloudinary
 
 ## Development
 
 ### Available tasks
 
-Main npm tasks defined (there are some pre-hooks used):
+Main _npm_ tasks defined (there are some pre-hooks used):
 
 ```
 start -› builds react app, copies it to public/ and starts keystone dev server
@@ -40,11 +44,13 @@ npm install
 
 React is used to compose the UI, the app is on `client/` folder.
 
-For development it uses mocks and its own `client/index.html` entry point that mimics `templates/views/layouts/default.hbs` structure (used on production). To start the app on development, run:
+On development, mocks are required and defined on `client/index.html`; this act as entry point that mimics `templates/views/layouts/default.hbs` structure (used on production). To start the app on development, run:
 
 ```
 npm start:react
 ```
+
+For more info, please check on its README.md
 
 ### Backend
 

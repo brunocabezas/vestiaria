@@ -29,14 +29,9 @@ const Header = ({ links, active, toggleWorks }) => {
           return (
             <li className="app__header-link" key={link.label}>
               {link.label === 'Work' ? (
-                <a
-                  data-featherlight="#mylightbox"
-                  title="Show reel"
-                  href="#works"
-                  onClick={toggleWorks}
-                >
+                <button type="button" title="Show reel" onClick={toggleWorks}>
                   work
-                </a>
+                </button>
               ) : (
                 <a className={className} title={link.label} href={link.href}>
                   {link.label}

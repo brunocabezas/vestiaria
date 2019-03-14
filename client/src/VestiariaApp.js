@@ -10,6 +10,7 @@ import Work from './Work';
 import About from './About';
 import * as p from './VestiariaApp.props';
 import Contact from './Contact';
+import actions from './actions'; //eslint-disable-line
 import '../assets/site.css';
 import '../assets/fonts.css';
 import './vestiariaApp.styl';
@@ -58,7 +59,7 @@ function VestiariaApp(props) {
       return <Contact />;
     }
     if (section === 'work') {
-      return <Work work={workActive} />;
+      return <Work workSlug={workActive} />;
     }
     return null;
   }
@@ -118,7 +119,7 @@ render(
   <VestiariaApp
     works={works}
     section={section}
-    workActive={work}
+    workActive={workSlug}
     children={body}
     homeGallery={homeGallery}
   />,

@@ -1,10 +1,11 @@
 .work
 	display flex
-	height calc(100% - 50px)
+	height 100%
 	width 100%
 
 	.work__media
 	.work__info
+		box-sizing border-box
 		height 100%
 
 	.work__emptySpace
@@ -14,10 +15,38 @@
 		padding 1em
 		flex 1
 		font-family Roboto
+		position relative
+
 		h1
 			margin-top 0
 		p
 			text-align justify
+
+		.work__mediaSelector
+			position absolute
+			bottom 1em
+			left 1em
+			list-style-type none
+			padding-left 0
+
+			li
+				font-family Roboto
+				display inline-block
+
+			.workButton
+				font-family Roboto-Thin
+				text-transform lowercase
+				margin 0 5px;
+				text-align center
+				transition all 0.3s
+				cursor pointer
+				background none
+				border none
+
+				&.workButton--active
+					color #ff9bf7
+				&:hover
+					color #ff9bf7
 
 	.work__media
 		background-color #eaeaea

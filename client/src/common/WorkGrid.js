@@ -56,9 +56,9 @@ function WorkGrid(props) {
                   src={url}
                   width="25%"
                   height={150}
-                  style={{ objectFit: 'cover' }} // Style your <img>
+                  style={{ objectFit: 'cover' }}
                   delay={25}
-                  duration={0.9} // Customize the animation duration (s).
+                  duration={0.9}
                 />
               </a>
             </div>

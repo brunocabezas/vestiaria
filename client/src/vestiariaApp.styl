@@ -1,6 +1,6 @@
 $header__height = 50px;
 
-html
+html, #app
   height 100%
 
 body
@@ -20,13 +20,15 @@ body
     height $header__height
     padding 10px
     text-align right
-    .app__header-nav
+
+    .app__headerNav
       margin 0
       right 10px
       list-style-type none
       text-align right
       clearfix();
-      .app__header-link
+
+      .app__headerLink
         span(1/4)
         float none
         display table-cell
@@ -51,7 +53,8 @@ body
 					border-color transparent
 					color black
 					cursor pointer
-        &.social-feed
+
+        &.socialFeed
           img,a
             height 26px
             width 26px

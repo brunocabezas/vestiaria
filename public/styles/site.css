@@ -16,21 +16,21 @@ body .app__header,
   padding: 10px;
   text-align: right;
 }
-body .app__header .app__header-nav,
-.app .app__header .app__header-nav {
+body .app__header .app__headerNav,
+.app .app__header .app__headerNav {
   margin: 0;
   right: 10px;
   list-style-type: none;
   text-align: right;
 }
-body .app__header .app__header-nav::after,
-.app .app__header .app__header-nav::after {
+body .app__header .app__headerNav::after,
+.app .app__header .app__headerNav::after {
   content: '';
   display: table;
   clear: both;
 }
-body .app__header .app__header-nav .app__header-link,
-.app .app__header .app__header-nav .app__header-link {
+body .app__header .app__headerNav .app__headerLink,
+.app .app__header .app__headerNav .app__headerLink {
   float: left;
   clear: none;
   text-align: inherit;
@@ -43,34 +43,34 @@ body .app__header .app__header-nav .app__header-link,
   text-align: center;
   vertical-align: middle;
 }
-body .app__header .app__header-nav .app__header-link::after,
-.app .app__header .app__header-nav .app__header-link::after {
+body .app__header .app__headerNav .app__headerLink::after,
+.app .app__header .app__headerNav .app__headerLink::after {
   content: '';
   display: table;
   clear: both;
 }
-body .app__header .app__header-nav .app__header-link a,
-.app .app__header .app__header-nav .app__header-link a {
+body .app__header .app__headerNav .app__headerLink a,
+.app .app__header .app__headerNav .app__headerLink a {
   transition: color 0.3;
   text-decoration: none;
   text-transform: lowercase;
   color: #000;
 }
-body .app__header .app__header-nav .app__header-link a.active,
-.app .app__header .app__header-nav .app__header-link a.active,
-body .app__header .app__header-nav .app__header-link a:hover,
-.app .app__header .app__header-nav .app__header-link a:hover {
+body .app__header .app__headerNav .app__headerLink a.active,
+.app .app__header .app__headerNav .app__headerLink a.active,
+body .app__header .app__headerNav .app__headerLink a:hover,
+.app .app__header .app__headerNav .app__headerLink a:hover {
   color: #ff9bf7;
 }
-body .app__header .app__header-nav .app__header-link.social-feed img,
-.app .app__header .app__header-nav .app__header-link.social-feed img,
-body .app__header .app__header-nav .app__header-link.social-feed a,
-.app .app__header .app__header-nav .app__header-link.social-feed a {
+body .app__header .app__headerNav .app__headerLink.socialFeed img,
+.app .app__header .app__headerNav .app__headerLink.socialFeed img,
+body .app__header .app__headerNav .app__headerLink.socialFeed a,
+.app .app__header .app__headerNav .app__headerLink.socialFeed a {
   height: 26px;
   width: 26px;
 }
-body .app__header .app__header-nav .app__header-link.social-feed img,
-.app .app__header .app__header-nav .app__header-link.social-feed img {
+body .app__header .app__headerNav .app__headerLink.socialFeed img,
+.app .app__header .app__headerNav .app__headerLink.socialFeed img {
   vertical-align: bottom;
 }
 body .app__container,

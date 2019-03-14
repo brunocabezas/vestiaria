@@ -28,7 +28,7 @@ const Video = ({ url }) => {
     <iframe
       title={id}
       width="100%"
-      height="360"
+      height="100%"
       frameBorder="0"
       allowFullScreen
       src={parsedUrl}

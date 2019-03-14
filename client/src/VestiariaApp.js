@@ -58,7 +58,7 @@ function VestiariaApp(props) {
       return <Contact />;
     }
     if (section === 'work') {
-      return <Work slug={workActive} />;
+      return <Work work={workActive} />;
     }
     return null;
   }
@@ -66,7 +66,7 @@ function VestiariaApp(props) {
   // listen to history (e.g. browsers button) changes
   useEffect(() => {
     // returned function will be called on component unmount
-    return history.listen((location, action) => {
+    return history.listen((location) => {
       // location is an object like window.location
       if (location.search.includes('works')) {
         setShowModal(true);

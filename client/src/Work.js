@@ -4,6 +4,7 @@ import superagent from 'superagent';
 import PropTypes from 'prop-types';
 import Gallery from './common/Gallery';
 import Video from './common/Video';
+import './work.styl';
 
 const propTypes = {
   work: PropTypes.shape({
@@ -15,12 +16,7 @@ const propTypes = {
     heroImage: PropTypes.shape({
       url: PropTypes.string
     })
-  }),
-  id: PropTypes.string
-};
-
-const defaultProps = {
-  slug: null
+  }).isRequired,
 };
 
 class Work extends React.Component {
@@ -28,7 +24,6 @@ class Work extends React.Component {
     super(props);
     // console.log(props);
     this.state = {
-      work: null,
       //  hold the current content state, could be 'video' or 'gallery'
       content: 'video'
     };
@@ -62,7 +57,7 @@ class Work extends React.Component {
   }
 
   render() {
-    const { work, content } = this.state;
+    const { work } = this.props;
     const hasGallery = work && work.gallery && work.gallery.length > 0;
     const hasVideo = work && work.video && work.video.length > 0;
     const displayContent =
@@ -84,9 +79,9 @@ class Work extends React.Component {
         : 'work-button work-button--active';
 
 		console.log(this.props, this.state);
-    return !work ? null : (
-      <div className="app__work">
-        <div className="app__work-info">
+    return (
+      <div className="work">
+        <div className="work__info">
           <h1>{work.name}</h1>
           <p>{work.abstract}</p>
           {hasGallery && hasVideo && (
@@ -103,12 +98,12 @@ class Work extends React.Component {
           )}
         </div>
 
-        <div className="app__work-display">{displayContent}</div>
+        <div className="work__media">{displayContent}</div>
+				<div className="work__emptySpace"></div>
       </div>
-    );
+    )
   }
 }
 
-Work.defaultProps = defaultProps;
 Work.propTypes = propTypes;
 export default Work;

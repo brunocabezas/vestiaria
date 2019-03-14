@@ -12,6 +12,7 @@ import * as p from './VestiariaApp.props';
 import Contact from './Contact';
 import '../assets/site.css';
 import '../assets/fonts.css';
+import './vestiariaApp.styl';
 
 // App Title
 const TITLE = 'Claudia Robles';
@@ -45,7 +46,7 @@ function VestiariaApp(props) {
   }
 
   function getContentBySection() {
-    const { section } = props;
+    const { section, workActive } = props;
 
     if (section === 'home') {
       return <Home />;
@@ -57,7 +58,7 @@ function VestiariaApp(props) {
       return <Contact />;
     }
     if (section === 'work') {
-      return <Work slug={props.workActive} />;
+      return <Work slug={workActive} />;
     }
     return null;
   }

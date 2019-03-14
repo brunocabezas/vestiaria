@@ -83,6 +83,7 @@ class Work extends React.Component {
         ? 'work-button'
         : 'work-button work-button--active';
 
+		console.log(this.props, this.state);
     return !work ? null : (
       <div className="app__work">
         <div className="app__work-info">

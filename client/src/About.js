@@ -7,13 +7,13 @@ const About = () => {
       <div className="wrapper">
         <p>
           Claudia Robles, diseñadora de vestuario, estilista y directora
-          artistica que reside en la ciudad de Santiago. En los ulitmos 27 años,
+          art&iacute;stica que reside en la ciudad de Santiago. En los ulitmos 27 años,
           Claudia ha trabajado como diseñadora en distintos proyectos
-          relacionados tanto en el área artística como comercial. A través del
-          vestuario ha trabajado formas de expresión particulares que han sido
+          relacionados tanto en el &aacute;rea artística como comercial. A trav&eacute;s del
+          vestuario ha trabajado formas de expresi&oacute;n particulares que han sido
           reconocidas dentro del medio artistico nacional e internacional.
           Actualmente Claudia se encuentra desarollando proyectos
-          multidisciplinarios que abarcan tanto las artes visuales , el diseño y
+          multidisciplinarios que abarcan tanto las artes visuales, el diseño y
           el cine.
         </p>
       </div>

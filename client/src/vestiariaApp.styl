@@ -1,0 +1,68 @@
+$header__height = 50px;
+
+html
+  height 100%
+
+body
+  margin 0
+  height 100%
+  min-height 100%
+
+.app
+  margin 0
+  min-height 100%
+  height 100%
+
+  .app__header
+    box-sizing border-box
+    position absolute
+    width 100%
+    height $header__height
+    padding 10px
+    text-align right
+    .app__header-nav
+      margin 0
+      right 10px
+      list-style-type none
+      text-align right
+      clearfix();
+      .app__header-link
+        span(1/4)
+        float none
+        display table-cell
+        padding 0
+        text-align center
+        vertical-align middle
+				button, a
+					padding: 1px 7px 2px;
+					margin 5px
+					text-transform: lowercase;
+					&.active
+					&:hover
+						cursor pointer
+						color #FF9BF7
+				a
+					transition: color 0.3;
+					text-decoration: none;
+					color: #000;
+				button
+					transition color 0.3
+					background-color transparent
+					border-color transparent
+					color black
+					cursor pointer
+        &.social-feed
+          img,a
+            height 26px
+            width 26px
+          img
+            vertical-align bottom
+
+  .app__container
+    padding-top $header__height
+    height calc(100% - 50px)
+
+.gallery-image img
+  display block
+  max-width 100%
+  height auto

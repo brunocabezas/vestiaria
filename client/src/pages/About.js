@@ -1,10 +1,11 @@
 import React from 'react';
+import './about.styl';
 
 const About = () => {
   return (
-    <div className="app__about">
+    <div className="about">
       <div className="title"> Claudia Robles </div>
-      <div className="wrapper">
+      <div className="about__wrapper">
         <p>
           Claudia Robles, diseñadora de vestuario, estilista y directora
           art&iacute;stica que reside en la ciudad de Santiago. En los ulitmos 27 años,

@@ -2,16 +2,14 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { createBrowserHistory } from 'history';
 import Header from './common/Header';
-import Home from './Home';
 import WorkGrid from './common/WorkGrid';
 import Modal from './common/Modal';
-import Work from './Work';
-import About from './About';
+import Work from './pages/Work';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import * as p from './VestiariaApp.props';
-import Contact from './Contact';
 import actions from './actions'; //eslint-disable-line
-import '../assets/site.css';
-import '../assets/fonts.css';
 import './vestiariaApp.styl';
 
 // App Title

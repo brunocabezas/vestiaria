@@ -13,14 +13,16 @@ const Video = ({ url }) => {
   let parsedUrl = '';
   let id;
   let splitted;
+  let height = "100%";
 
-  if (url.indexOf('vimeo') >= 0) {
+  if (url.includes('vimeo')) {
     splitted = url.split('/');
     id = splitted[splitted.length - 1];
     parsedUrl = `https://player.vimeo.com/video/${id}`;
-  } else if (url.indexOf('youtube') >= 0) {
+  } else if (url.includes('youtube')) {
     splitted = url.split('/watch?v=');
     id = splitted[splitted.length - 1];
+		height = "360px";
     parsedUrl = `https://www.youtube.com/embed/${id}`;
   }
 
@@ -28,7 +30,7 @@ const Video = ({ url }) => {
     <iframe
       title={id}
       width="100%"
-      height="100%"
+      height={height}
       frameBorder="0"
       allowFullScreen
       src={parsedUrl}

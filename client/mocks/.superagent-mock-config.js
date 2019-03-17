@@ -13,7 +13,6 @@ const config = [
   {
     pattern: /api/,
     fixtures: function(match, params, headers, context) {
-			console.log(match.input,routes.works,)
       if (match.input.includes(routes.works)) {
         return worksRes;
       }
@@ -33,4 +32,4 @@ const config = [
   },
 ];
 
-export default function() { return superagentMock(superagent, config, logger) }
+export default function() { return superagentMock(superagent, config) }

@@ -23,38 +23,36 @@ const history = createBrowserHistory();
 
 // App content, switches between page components depending env variables
 const contentPropTypes = {
-	section : PropTypes.string.isRequired,
-	data: PropTypes.string,
+  section: PropTypes.string.isRequired,
+  data: PropTypes.string
 };
 
 const contentDefaultProps = { data: null };
-const AppContent = ({section, data}) => {
-    if (section === 'home') {
-      return <Home />;
-    }
-    if (section === 'about') {
-      return <About />;
-    }
-    if (section === 'contact') {
-      return <Contact />;
-    }
-    if (section === 'work') {
-      return <Work workSlug={data} />;
-    }
-    return null;
-  };
+const AppContent = ({ section, data }) => {
+  if (section === 'home') {
+    return <Home />;
+  }
+  if (section === 'about') {
+    return <About />;
+  }
+  if (section === 'contact') {
+    return <Contact />;
+  }
+  if (section === 'work') {
+    return <Work workSlug={data} />;
+  }
+  return null;
+};
 AppContent.propTypes = contentPropTypes;
 AppContent.defaultProps = contentDefaultProps;
 
 // Main app
 function VestiariaApp(props) {
-  const [initialized, setInitialized] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   function closeModal(avoidSet = false) {
     if (!avoidSet) setShowModal(false);
     history.push(`/`);
-    document.title = TITLE;
   }
 
   function toggleModal() {
@@ -65,20 +63,23 @@ function VestiariaApp(props) {
       closeModal(true);
     } else {
       history.push(`/?works`);
-      document.title = `${TITLE} - Works`;
     }
   }
 
   // listen to history (e.g. browsers button) changes
   useEffect(() => {
+		console.log('VestiariaApp#init()');
+    const isWorksOnUrl = history.location.search.includes('works');
+    document.title = isWorksOnUrl ? `${TITLE} - Works` : TITLE;
+    if (isWorksOnUrl) {
+      toggleModal();
+    }
     // returned function will be called on component unmount
-    return history.listen((location) => {
+    return history.listen(location => {
       // location is an object like window.location
       if (location.search.includes('works')) {
         setShowModal(true);
-        document.title = `${TITLE} - Works`;
       } else {
-        document.title = TITLE;
         setShowModal(false);
       }
     });
@@ -86,21 +87,12 @@ function VestiariaApp(props) {
 
   // Init
   useEffect(() => {
-    const isWorksOnUrl = history.location.search.includes('works');
-		if (!initialized) {
-      console.log('VestiariaApp#init()');
-			// Check if to open works modal (and change app's title)
-			if (isWorksOnUrl) {
-				toggleModal();
-				setInitialized(true);
-				document.title = `${TITLE} - Works`;
-			} else if (!initialized) {
-				document.title = TITLE;
-				setInitialized(true);
-			}
-		}
-
-  });
+    if (showModal) {
+      document.title = `${TITLE} - Works`;
+    } else {
+      document.title = TITLE;
+    }
+  }, [showModal]);
 
   const { section, workActive } = props;
   return (
@@ -120,4 +112,4 @@ function VestiariaApp(props) {
   );
 }
 VestiariaApp.propTypes = propTypes;
-export default VestiariaApp
+export default VestiariaApp;

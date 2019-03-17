@@ -19,7 +19,7 @@ function WorkGrid({ show }) {
 
   function handleAPIData(err, res) {
     if (!err && res.ok && res.body && res.body.data) {
-			console.log('WorkGrid#setWorks', res.body.data, res.data)
+			console.log('WorkGrid#setWorks', res.body.data)
       setWorks(res.body.data);
     }
     if (firstWork && firstWork.current) {

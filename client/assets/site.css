@@ -62,15 +62,6 @@
   background-color: #eaeaea;
   max-width: 560px;
 }
-.app__about .title {
-  padding: 1em;
-}
-.app__about .wrapper {
-  width: 560px;
-  margin: 0 auto;
-  line-height: 1.5;
-  text-align: justify;
-}
 .app__contact {
   padding: 0 1em 1em 1em;
 }

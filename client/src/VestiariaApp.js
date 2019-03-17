@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from 'react';
-// import PropTypes from 'prop-types';
-import { render } from 'react-dom';
+import PropTypes from 'prop-types';
 import { createBrowserHistory } from 'history';
 import Header from './common/Header';
-import Home from './Home';
 import WorkGrid from './common/WorkGrid';
 import Modal from './common/Modal';
-import Work from './Work';
-import About from './About';
+import Work from './pages/Work';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
 import * as p from './VestiariaApp.props';
-import Contact from './Contact';
 import actions from './actions'; //eslint-disable-line
-import '../assets/site.css';
-import '../assets/fonts.css';
 import './vestiariaApp.styl';
 
 // App Title
@@ -24,14 +21,38 @@ const propTypes = {
 
 const history = createBrowserHistory();
 
+// App content, switches between page components depending env variables
+const contentPropTypes = {
+  section: PropTypes.string.isRequired,
+  data: PropTypes.string
+};
+
+const contentDefaultProps = { data: null };
+const AppContent = ({ section, data }) => {
+  if (section === 'home') {
+    return <Home />;
+  }
+  if (section === 'about') {
+    return <About />;
+  }
+  if (section === 'contact') {
+    return <Contact />;
+  }
+  if (section === 'work') {
+    return <Work workSlug={data} />;
+  }
+  return null;
+};
+AppContent.propTypes = contentPropTypes;
+AppContent.defaultProps = contentDefaultProps;
+
+// Main app
 function VestiariaApp(props) {
-  const [initialized, setInitialized] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   function closeModal(avoidSet = false) {
     if (!avoidSet) setShowModal(false);
     history.push(`/`);
-    document.title = TITLE;
   }
 
   function toggleModal() {
@@ -42,38 +63,23 @@ function VestiariaApp(props) {
       closeModal(true);
     } else {
       history.push(`/?works`);
-      document.title = `${TITLE} - Works`;
     }
-  }
-
-  function getContentBySection() {
-    const { section, workActive } = props;
-
-    if (section === 'home') {
-      return <Home />;
-    }
-    if (section === 'about') {
-      return <About />;
-    }
-    if (section === 'contact') {
-      return <Contact />;
-    }
-    if (section === 'work') {
-      return <Work workSlug={workActive} />;
-    }
-    return null;
   }
 
   // listen to history (e.g. browsers button) changes
   useEffect(() => {
+		console.log('VestiariaApp#init()');
+    const isWorksOnUrl = history.location.search.includes('works');
+    document.title = isWorksOnUrl ? `${TITLE} - Works` : TITLE;
+    if (isWorksOnUrl) {
+      toggleModal();
+    }
     // returned function will be called on component unmount
-    return history.listen((location) => {
+    return history.listen(location => {
       // location is an object like window.location
       if (location.search.includes('works')) {
         setShowModal(true);
-        document.title = `${TITLE} - Works`;
       } else {
-        document.title = TITLE;
         setShowModal(false);
       }
     });
@@ -81,21 +87,14 @@ function VestiariaApp(props) {
 
   // Init
   useEffect(() => {
-    const isWorksOnUrl = history.location.search.includes('works');
-    if (isWorksOnUrl && !initialized) {
-      console.log('VestiariaApp#init()');
-      toggleModal();
-      setInitialized(true);
+    if (showModal) {
       document.title = `${TITLE} - Works`;
-    } else if (!initialized) {
+    } else {
       document.title = TITLE;
-      setInitialized(true);
     }
-  });
+  }, [showModal]);
 
-  const { section } = props;
-  const content = getContentBySection();
-
+  const { section, workActive } = props;
   return (
     <div className="app">
       <Header
@@ -107,22 +106,10 @@ function VestiariaApp(props) {
         <WorkGrid show={showModal} />
       </Modal>
       <div className="app__container" id="app__container">
-        {content}
+        <AppContent section={section} data={workActive} />
       </div>
     </div>
   );
 }
 VestiariaApp.propTypes = propTypes;
-
-/* eslint-disable */
-render(
-  <VestiariaApp
-    works={works}
-    section={section}
-    workActive={workSlug}
-    children={body}
-    homeGallery={homeGallery}
-  />,
-  document.getElementById('app')
-  /* eslint-enable */
-);
+export default VestiariaApp;

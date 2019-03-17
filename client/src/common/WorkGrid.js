@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import superagent from 'superagent';
 import Image from 'react-shimmer';
-import worksMock from '../../mocks/works-get-response.json';
+import * as actions from '../actions';
 
 import './workGrid.styl';
 
@@ -14,30 +13,31 @@ const defaultProps = {
   show: false
 };
 
-function WorkGrid(props) {
+function WorkGrid({ show }) {
   const firstWork = useRef(null);
   const [works, setWorks] = useState([]);
 
   function handleAPIData(err, res) {
     if (!err && res.ok && res.body && res.body.data) {
-      setWorks(worksMock.data);
+			console.log('WorkGrid#setWorks', res.body.data)
+      setWorks(res.body.data);
     }
-    // TODO remove this when using real api (production)
-    setWorks(worksMock.data);
-    firstWork.current.focus();
+    if (firstWork && firstWork.current) {
+      firstWork.current.focus();
+    }
   }
 
   useEffect(() => {
-    if (props.show && firstWork && firstWork.current) {
+    if (show && firstWork && firstWork.current) {
       // Focusing first element when opening
       firstWork.current.focus();
     }
-  }, [props.show]); // eslint-disable-line
-  // Similar to componentDidMount and componentDidUpdate:
+  }, [show]); // eslint-disable-line
+
+  // Fetching data from API
   useEffect(() => {
-    // Fetching data from API
-    superagent.get('/api/home_gallery').end(handleAPIData);
-  });
+    actions.getWorks().end(handleAPIData);
+  }, []);
 
   return (
     <div className="workGrid">

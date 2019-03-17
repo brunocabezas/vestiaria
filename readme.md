@@ -50,14 +50,14 @@ On development, mocks are required and defined on `client/index.html`; this act 
 npm start:react
 ```
 
-For more info, please check on its README.md
+For more info, please check on its [README.md](client/README.md)
 
 ### Backend
 
-Type the following to run KeystoneJS backend server:
+Type the following to run KeystoneJS server:
 
-```
-npm start
+```bash
+npm start  // Starts server using keystone.js as config file
 ```
 
 Its important to mention that **different services are used and they require a bit of setup**. Using an `.env` file is recommended, there you define:
@@ -67,12 +67,12 @@ Its important to mention that **different services are used and they require a b
 - `MAILGUN_API_KEY` (optional)
 - `MAILGUN_DOMAIN` (optional)
 
-Also having a running [mongodb](https://docs.mongodb.com/) environment is required; keystone serve will connect trough port `27.017`.
+Having a running [mongodb](https://docs.mongodb.com/) environment **is required**; keystone server will connect to a running mongo db instance through port `27.017`.
 
 This will serve up the application at `localhost:3000`
 
 #### Templates and Client
 
-KeystoneJS allow us to render backend data using Handlebars. Use of this template system must be limited to almost none, just enough to run the javascript app on `client/`.
+KeystoneJS renders backend data via [Handlebars](https://handlebarsjs.com). Use of this template engine is limited to almost none, just enough to run the `client/` javascript app.
 
-The one and only `layouts/default.hbs` declares the basic to start a react-app plus some variables needed for this to work.
+The one and only `layouts/default.hbs` declares the basic to start a react-app plus some env. variables needed.

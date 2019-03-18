@@ -14,10 +14,7 @@ Application built with:
 - [ ] Remove `public/styles` folder
 - [ ] Fix fonts route on for client
 - [ ] Media query and mobile on work grid
-- [ ] Url reacting to changes
 - [ ] Change first picture
-- [ ] Preload home gallery photos
-- [ ] Compress photos on cloudinary
 - [ ] https://ethanselzer.github.io/react-image-magnify/#/hint
 
 ## Development

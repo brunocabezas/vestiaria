@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import Image from 'react-shimmer';
 import PropTypes from 'prop-types';
 import './gallery.styl';
@@ -16,85 +16,76 @@ const propTypes = {
   ).isRequired
 };
 
-function useKeyboardEvent(keyCode, callback) {
-  useEffect(() => {
-    const handler = function(event) {
-      if (event.keyCode === keyCode) {
-        callback();
-      }
-    };
-    window.addEventListener('keydown', handler);
-    return () => {
-      window.removeEventListener('keydown', handler);
-    };
-  }, []);
-}
-
 function Gallery({ images }) {
-  // const [images] = useState(images);
-  const [currentImage, setCurrentImage] = useState(images[0]._id);
-  // const elRef = useRef(images.map(() => null));
-
-  function changeImage(e) {
-    // Getting id of next button element
-    const { id } = e.currentTarget.nextElementSibling;
-    console.log('Gallery#setCurrentImage()', id);
-    setCurrentImage(id);
-  }
+  const [currentImg, dispatch] = useReducer(
+    (state, action) => {
+      if (action.type === 'nextIndex') {
+        // If index is bigger than total img count, set it to zero
+        const index = state.index >= state.count - 1 ? 0 : state.index + 1;
+        return { ...state, index };
+      }
+      if (action.type === 'previousIndex') {
+        // If index is zero, set last index available
+        const index = state.index === 0 ? state.count - 1 : state.index - 1;
+        return { ...state, index };
+      }
+      return state;
+    },
+    { index: 0, count: images.length }
+  );
 
   function onKeyDown(e) {
-    const current = images.findIndex(i => i._id === currentImage);
-    console.log(e, e.keyCode);
-    if (e.keyCode === 39) {
-      console.log('Gallery#useKeyboardEvent() -- ArrowNext', current);
-      if (current >= 0) {
-        setCurrentImage(images[current + 1]._id);
-      }
+    if (e.keyCode === 39 || e.keyCode === 40) {
+      dispatch({ type: 'nextIndex' });
+    } else if (e.keyCode === 37 || e.keyCode === 38) {
+      dispatch({ type: 'previousIndex' });
+    }
+  }
+
+  function onImageClick() {
+    const imgClicked = images.findIndex((img, ix) => ix === currentImg.index);
+    // If imgClicked is found on images (props), go to next image
+    if (imgClicked) {
+      dispatch({ type: 'nextIndex' });
     }
   }
 
   useEffect(() => {
-    const handler = function(event) {
-      if (event.keyCode === keyCode) {
-        callback();
+    const changeCurrentImg = e => {
+      if (e.keyCode === 39 || e.keyCode === 40) {
+        dispatch({ type: 'nextIndex' });
+      } else if (e.keyCode === 37 || e.keyCode === 38) {
+        dispatch({ type: 'previousIndex' });
       }
     };
-    window.addEventListener('keydown', handler);
-    return () => {
-      window.removeEventListener('keydown', handler);
-    };
-  }, []);
-  // useKeyboardEvent(39, function() {});
 
-  // useKeyboardEvent(37, function() {
-  //   const current = images.findIndex(i => i._id === currentImage);
-  //   console.log(currentImage);
-  //   console.log('Gallery#useKeyboardEvent() -- ArrowPrevious', current);
-  //   if (current > 0) {
-  //     setCurrentImage(images[current - 1]._id);
-  //   }
-  // });
+    window.addEventListener('keydown', changeCurrentImg);
+    return () => {
+      window.removeEventListener('keydown', changeCurrentImg);
+    };
+  }, [currentImg, dispatch]);
 
   return (
     <div className="gallery">
       {images &&
         images.length > 0 &&
-        images.map(i => {
+        images.map((img, ix) => {
           const className =
-            currentImage && currentImage === i._id
+            currentImg.index === ix
               ? 'gallery__img gallery__img--current'
               : 'gallery__img';
+
           return (
             <button
               onKeyPress={onKeyDown}
               className={className}
-              key={i._id}
-              id={i._id}
+              key={img._id}
+              id={img._id}
               type="button"
-              onClick={changeImage}
+              onClick={onImageClick}
             >
               <Image
-                src={i.url}
+                src={img.url}
                 width="100%"
                 height={150}
                 style={{ objectFit: 'cover' }}

@@ -11,7 +11,7 @@ const urlIframeParse = url => {
     const id = url.split('/watch?v=').reverse()[0];
     return `https://www.youtube.com/embed/${id}`;
   }
-  console.warning('invalid video url');
+  console.warn('invalid video url');
   return null;
 };
 

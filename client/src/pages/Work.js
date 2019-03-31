@@ -9,10 +9,9 @@ const propTypes = {
   workSlug: PropTypes.string.isRequired
 };
 
-function Work(props) {
+function Work({ workSlug }) {
   const [mediaType, setMediaType] = useState('video');
   const [work, setWork] = useState({});
-  const [initialized, setInitialized] = useState(false);
 
   function showGallery() {
     console.log('Work#setMediaType()', 'gallery');
@@ -26,23 +25,21 @@ function Work(props) {
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    // Fetching data from API
-    if (!initialized) {
-      actions.getWork(props.workSlug).end((err, res) => {
-        if (!err && res.ok) {
-          const workData = res.body.data;
-          const worKediaType =
-            workData && workData.video && workData.video.length > 0
-              ? 'video'
-              : 'gallery';
+    console.log('Work#init()');
+    actions.getWork(workSlug).end((err, res) => {
+      if (!err && res.ok) {
+        const workData = res.body.data;
+        const worKediaType =
+          workData && workData.video && workData.video.length > 0
+            ? 'video'
+            : 'gallery';
 
-          setWork(workData);
-          setMediaType(worKediaType);
-          setInitialized(true);
-        }
-      });
-    }
-  });
+				console.log('Work#setWork()', workData);
+        setWork(workData);
+        setMediaType(worKediaType);
+      }
+    });
+  }, [workSlug]);
 
   const hasGallery = work && work.gallery && work.gallery.length > 0;
   const hasVideo = work && work.video && work.video.length > 0;

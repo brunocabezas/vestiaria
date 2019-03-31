@@ -14,7 +14,7 @@ const Contact = () => {
           className="instagram"
           rel="noreferrer noopener"
           target="_blank"
-          href="https://www.instagram.com/cluda.roblins"
+          href="https://www.instagram.com/cludarobles/"
         >
           instagram
         </a>

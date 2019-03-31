@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Image from 'react-shimmer';
 import * as actions from '../actions';
 
-import './workGrid.styl';
+import './_workGrid.styl';
 
 const propTypes = {
   show: PropTypes.bool

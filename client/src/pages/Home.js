@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as actions from '../actions';
 import Gallery from '../common/Gallery';
-import './home.styl';
+import './_home.styl';
 
 // Changing cloudinary url to show auto quality
 // https://cloudinary.com/documentation/image_optimization

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import useEscapeKey from '@daniel.husar/use-escape-key';
-import './modal.styl';
+import './_modal.styl';
 
 const propTypes = {
   handleClose: PropTypes.func.isRequired,

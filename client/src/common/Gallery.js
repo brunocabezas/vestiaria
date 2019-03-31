@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect, useCallback } from 'react';
 import Image from 'react-shimmer';
 import PropTypes from 'prop-types';
-import './gallery.styl';
+import './_gallery.styl';
 
 const propTypes = {
   images: PropTypes.arrayOf(
@@ -85,15 +85,17 @@ function Gallery({ images }) {
               type="button"
               onClick={onImageClick}
             >
-              <Image
-                src={img.url}
-                width="100%"
-                title="Next image"
-                height={150}
-                style={{ objectFit: 'cover' }}
-                delay={25}
-                duration={0.9}
-              />
+              <span className="gallery__imgWrapper">
+                <Image
+                  src={img.url}
+                  width="100%"
+                  title="Next image"
+                  height={150}
+                  style={{ objectFit: 'cover' }}
+                  delay={25}
+                  duration={0.9}
+                />
+              </span>
             </button>
           );
         })}

@@ -14,7 +14,6 @@ Application built with:
 - [ ] Remove `public/styles` folder
 - [ ] Fix fonts route on client
 - [ ] Media query and mobile on work grid
-- [ ] Change first picture
 - [ ] https://ethanselzer.github.io/react-image-magnify/#/hint
 
 ## Development

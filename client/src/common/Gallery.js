@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect, useCallback } from 'react';
 import Image from 'react-shimmer';
 import PropTypes from 'prop-types';
 import './gallery.styl';
@@ -31,39 +31,41 @@ function Gallery({ images }) {
       }
       return state;
     },
-    { index: 0, count: images.length }
+    { index: images.length > 16 ? 15 : 0, count: images.length }
   );
 
-  function onKeyDown(e) {
-    if (e.keyCode === 39 || e.keyCode === 40) {
-      dispatch({ type: 'nextIndex' });
-    } else if (e.keyCode === 37 || e.keyCode === 38) {
-      dispatch({ type: 'previousIndex' });
-    }
-  }
-
   function onImageClick() {
-    const imgClicked = images.findIndex((img, ix) => ix === currentImg.index);
-    // If imgClicked is found on images (props), go to next image
-    if (imgClicked) {
-      dispatch({ type: 'nextIndex' });
-    }
+    dispatch({ type: 'nextIndex' });
+    console.log('Gallery#onImageClick()');
   }
 
-  useEffect(() => {
-    const changeCurrentImg = e => {
+  const changeImgCallback = useCallback(
+    e => {
+      // right and down arrow keys
       if (e.keyCode === 39 || e.keyCode === 40) {
         dispatch({ type: 'nextIndex' });
+
+        // left and up arrow keys
       } else if (e.keyCode === 37 || e.keyCode === 38) {
         dispatch({ type: 'previousIndex' });
-      }
-    };
 
-    window.addEventListener('keydown', changeCurrentImg);
+        // enter
+      } else if (e.keyCode === 13) {
+        dispatch({ type: 'nextIndex' });
+      }
+
+      console.log('Gallery#changeImgCallback()');
+    },
+    [dispatch]
+  );
+
+  // Gallery init
+  useEffect(() => {
+    window.addEventListener('keydown', changeImgCallback);
     return () => {
-      window.removeEventListener('keydown', changeCurrentImg);
+      window.removeEventListener('keydown', changeImgCallback);
     };
-  }, [currentImg, dispatch]);
+  }, [changeImgCallback]);
 
   return (
     <div className="gallery">
@@ -77,7 +79,6 @@ function Gallery({ images }) {
 
           return (
             <button
-              onKeyPress={onKeyDown}
               className={className}
               key={img._id}
               id={img._id}
@@ -87,6 +88,7 @@ function Gallery({ images }) {
               <Image
                 src={img.url}
                 width="100%"
+                title="Next image"
                 height={150}
                 style={{ objectFit: 'cover' }}
                 delay={25}

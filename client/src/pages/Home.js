@@ -11,6 +11,7 @@ const useAutoQuality = i =>
       i.url.split('upload/')[1]
     }`
   });
+
 function Home() {
   const [images, setImages] = useState([]);
 

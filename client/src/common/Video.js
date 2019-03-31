@@ -1,6 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// get right url format to use with <iframe/> element
+const urlIframeParse = url => {
+  if (url.includes('vimeo')) {
+    const id = url.split('/').reverse()[0];
+    return `https://player.vimeo.com/video/${id}`;
+  }
+  if (url.includes('youtube')) {
+    const id = url.split('/watch?v=').reverse()[0];
+    return `https://www.youtube.com/embed/${id}`;
+  }
+  console.warning('invalid video url');
+  return null;
+};
+
 const propTypes = {
   url: PropTypes.string
 };
@@ -10,25 +24,12 @@ const defaultProps = {
 };
 
 const Video = ({ url }) => {
-  let parsedUrl = '';
-  let id;
-  let splitted;
-  let height = "100%";
-
-  if (url.includes('vimeo')) {
-    splitted = url.split('/');
-    id = splitted[splitted.length - 1];
-    parsedUrl = `https://player.vimeo.com/video/${id}`;
-  } else if (url.includes('youtube')) {
-    splitted = url.split('/watch?v=');
-    id = splitted[splitted.length - 1];
-		height = "360px";
-    parsedUrl = `https://www.youtube.com/embed/${id}`;
-  }
+  const parsedUrl = urlIframeParse(url);
+  const height = url.includes('youtube') ? '360px' : '100%';
 
   return !url ? null : (
     <iframe
-      title={id}
+      title={url}
       width="100%"
       height={height}
       frameBorder="0"

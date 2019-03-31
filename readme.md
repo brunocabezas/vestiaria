@@ -37,11 +37,11 @@ lint:react -› lints react app
 npm install
 ```
 
-### Frontend
+### Front-end app
 
-React is used to compose the UI, the app is on `client/` folder.
+React is used to create UI components, the app is located on [public/client](public/client).
 
-On development, mocks are required and defined on `client/index.html`; this act as entry point that mimics `templates/views/layouts/default.hbs` structure (used on production). To start the app on development, run:
+On development env, some variables are mocked (on `client/index.html`); this to mimic entry point used with KeystoneJS as backend (`templates/views/layouts/default.hbs`) on production. To start the app on development, run:
 
 ```
 npm start:react
@@ -49,7 +49,7 @@ npm start:react
 
 For more info, please check on its [README.md](client/README.md)
 
-### Backend
+### KeystoneJS Server
 
 Type the following to run KeystoneJS server:
 
@@ -64,7 +64,7 @@ Its important to mention that **different services are used and they require a b
 - `MAILGUN_API_KEY` (optional)
 - `MAILGUN_DOMAIN` (optional)
 
-Having a running [mongodb](https://docs.mongodb.com/) environment **is required**; keystone server will connect to a running mongo db instance through port `27.017`.
+For data, is required a running [mongodb](https://docs.mongodb.com/) environment; keystone server will connect (through port `27.017`) to mongo's instance.
 
 This will serve up the application at `localhost:3000`
 

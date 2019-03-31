@@ -7,7 +7,7 @@
 		"prestart": "npm run build:react && npm run clean:client && cp -R client/dist/ public/client/",
 		"start": "node keystone.js",
 		"start:react": "./node_modules/parcel-bundler/bin/cli.js ./client/index.html",
-		"build:react": "rm -rf client/dist && parcel build client/src/VestiariaApp.js -d client/dist",
+		"build:react": "rm -rf client/dist && parcel build client/src/index.js -d client/dist",
 		"clean:client": "rm -rf public/client/",
 		"prebuild": "npm run build:react && npm run clean:client && cp -R client/dist public/client",
 		"build": "PORT=80 node keystone.js"

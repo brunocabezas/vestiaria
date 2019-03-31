@@ -11,10 +11,10 @@ Application built with:
 
 ## Next steps
 
-- [ ] Remove `public/styles` folder
 - [ ] Fix fonts route on client
 - [ ] Media query and mobile on work grid
-- [ ] https://ethanselzer.github.io/react-image-magnify/#/hint
+- [ ] Browser buttons interaction on Home>Gallery and WorkModal
+- [ ] https://ethanselzer.github. io/react-image-magnify/#/hint?
 
 ## Development
 

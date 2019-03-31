@@ -36,7 +36,7 @@
 			.workButton
 				font-family Roboto-Thin
 				text-transform lowercase
-				margin 0 5px;
+				// margin 0 5px;
 				text-align center
 				transition all 0.3s
 				cursor pointer
@@ -54,3 +54,28 @@
 		flex 2
 		align-items center
 		min-width 560px
+
+	@media (max-width: 800px)
+		flex-direction column
+		.work__media
+			margin-top 25px
+			padding 10px
+			flex-grow 100
+			.gallery .gallery__img
+			.gallery .gallery__img img
+			.gallery .gallery__img .gallery__imgWrapper
+				height 100% !important
+
+		.work__info
+			flex-grow 0
+			.work__mediaSelector
+				display block
+				margin-top 25px
+				position relative
+				left 0
+				li:first-child .workButton
+					padding-left 0
+
+	@media (max-width: 560px)
+		.work__media
+			min-width 100%

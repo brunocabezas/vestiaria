@@ -52,14 +52,14 @@ function Work({ workSlug }) {
   // If work has both video and gallery, display a selector to switch between them
   const workMediaSelector = !(hasGallery && hasVideo) ? null : (
     <span className="work__mediaSelector">
-      <li className={videoButtonClass}>
-        <button className="workButton" type="button" onClick={showVideo}>
+      <li>
+        <button className={videoButtonClass} type="button" onClick={showVideo}>
           video
         </button>
       </li>
       <li className="separator">|</li>
-      <li className={galleryButtonClass}>
-        <button className="workButton" type="button" onClick={showGallery}>
+      <li>
+        <button className={galleryButtonClass} type="button" onClick={showGallery}>
           photos
         </button>
       </li>

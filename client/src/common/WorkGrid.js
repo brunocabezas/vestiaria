@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Image from 'react-shimmer';
 import * as actions from '../actions';
 
-import './workGrid.styl';
+import './_workGrid.styl';
 
 const propTypes = {
   show: PropTypes.bool
@@ -19,7 +19,7 @@ function WorkGrid({ show }) {
 
   function handleAPIData(err, res) {
     if (!err && res.ok && res.body && res.body.data) {
-			console.log('WorkGrid#setWorks', res.body.data)
+      console.log('WorkGrid#setWorks', res.body.data);
       setWorks(res.body.data);
     }
     if (firstWork && firstWork.current) {
@@ -32,10 +32,11 @@ function WorkGrid({ show }) {
       // Focusing first element when opening
       firstWork.current.focus();
     }
-  }, [show]); // eslint-disable-line
+  }, [show]);
 
-  // Fetching data from API
+  // Fetching data from API on init
   useEffect(() => {
+    console.log('WorkGrid#init()');
     actions.getWorks().end(handleAPIData);
   }, []);
 

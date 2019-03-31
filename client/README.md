@@ -4,12 +4,16 @@ Frontend app for KeystoneJS on www.claudiarobles.com. Build with React 16 and ho
 
 ## Development
 
-When running the development server, mocks located on `.client/mocks/` are used by `superagent`.
+To start the dev server please run:
 
 ```
 npm start:react
 ```
-TODO explain how to mock different sections of the app by changing the index.html env variables.
+
+API calls and env variables (on [entry point]('index.html') are mocked. [Superagent](https://github.com/visionmedia/superagent)(API handler) mocks are located [here]('mocks').
+
+A custom [eslint config]('.eslintrc') is used. API calls are located
+
 ## Build
 
 ```

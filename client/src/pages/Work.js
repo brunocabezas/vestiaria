@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import * as actions from '../actions';
 import Gallery from '../common/Gallery';
 import Video from '../common/Video';
-import './work.styl';
+import './_work.styl';
 
 const propTypes = {
   workSlug: PropTypes.string.isRequired

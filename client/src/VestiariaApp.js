@@ -68,11 +68,12 @@ function VestiariaApp(props) {
 
   // listen to history (e.g. browsers button) changes
   useEffect(() => {
-		console.log('VestiariaApp#init()');
+    console.log('VestiariaApp#init()');
     const isWorksOnUrl = history.location.search.includes('works');
     document.title = isWorksOnUrl ? `${TITLE} - Works` : TITLE;
     if (isWorksOnUrl) {
-      toggleModal();
+      setShowModal(true);
+      history.push(`/?works`);
     }
     // returned function will be called on component unmount
     return history.listen(location => {
@@ -85,7 +86,7 @@ function VestiariaApp(props) {
     });
   }, []);
 
-  // Init
+  // Sets apps title if modal is opened
   useEffect(() => {
     if (showModal) {
       document.title = `${TITLE} - Works`;

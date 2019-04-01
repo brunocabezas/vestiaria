@@ -31,7 +31,10 @@ function Gallery({ images }) {
       }
       return state;
     },
-    { index: images.length > 16 ? 15 : 0, count: images.length }
+    {
+      index: images && images.length > 16 ? 15 : 0,
+      count: images && images.length
+    }
   );
 
   function onImageClick() {

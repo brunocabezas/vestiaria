@@ -4,15 +4,13 @@ Site hosted on [claudiarobles.com](http://claudiarobles.com)
 
 Application built with:
 
-- [KeystoneJS](https://github.com/keystonejs/keystone) - Node.js content management system.
-- [ReactJS](https://reactjs.org/) - To compose the UI.
-- [Jeet](http://jeet.gs/) - A grid system for humans.
-- [Stylus](http://stylus-lang.com/) - CSS Framework.
+- [KeystoneJS](https://github.com/keystonejs/keystone), a Node.js content management system.
+- [ReactJS](https://reactjs.org/) to compose the UI.
+- [Stylus](http://stylus-lang.com/) CSS Framework.
 
 ## Next steps
 
 - [ ] Fix fonts route on client
-- [ ] Media query and mobile on work grid
 - [ ] Browser buttons interaction on Home>Gallery and WorkModal
 - [ ] https://ethanselzer.github. io/react-image-magnify/#/hint?
 

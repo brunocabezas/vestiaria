@@ -13,7 +13,8 @@ const config = [
   {
     pattern: /api/,
     fixtures: function(match, params, headers, context) {
-      if (match.input.includes(routes.works)) {
+			// console.log(route.works, match.input, match.input.includes === routes.works)
+      if (match.input === routes.works) {
         return worksRes;
       }
       if (match.input.includes(routes.work)) {

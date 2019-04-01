@@ -12,6 +12,10 @@
 		"prebuild": "npm run build:react && npm run clean:client && cp -R client/dist public/client",
 		"build": "PORT=80 node keystone.js"
 	},
+	"engines": {
+		"node": "^11.0.0",
+		"npm": "^6.9.0",
+	},
 	"dependencies": {
 		"@daniel.husar/use-escape-key": "^1.0.4",
 		"async": "2.1.4",
